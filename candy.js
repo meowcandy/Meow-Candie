@@ -2,7 +2,6 @@ const Discord = require('discord.js')
 const yt = require('ytdl-core');
 const tokens = require('./tokens.json');
 const bot = new Discord.Client()
-const prefix = "^"
 
 let queue = {};
 
@@ -69,7 +68,7 @@ const commands = {
 			voiceChannel.leave().then(disconnect => resolve(disconnect)).catch(err => reject(err));
 		});
 	},
-	'them': (msg) => {
+	'add': (msg) => {
 		let url = msg.content.split(' ')[1];
 		if (url == '' || url === undefined) return msg.channel.sendMessage(`bạn phải add link video YouTube hoặc ID ${tokens.prefix}add`);
 		yt.getInfo(url, (err, info) => {
