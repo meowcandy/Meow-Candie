@@ -101,58 +101,58 @@ bot.on('ready', ()=>{
     })
 });   
 bot.on('message', (message)=>{
-    if (!message.guild) return;
-    if (message.content.startsWith(prefix + "j")){
-        if (message.member.voiceChannel){
-            message.member.voiceChannel.join()
+    if (!msg.guild) return;
+    if (msg.content.startsWith(prefix + "j")){
+        if (msg.member.voiceChannel){
+            msg.member.voiceChannel.join()
             .then(connection => {
-                message.reply('Oke đã chui zo');
+                msg.reply('Oke đã chui zo');
             })
             .catch(console.log);
         }else {
-            message.reply('vào voice trước đi giáo sư ơi :V');
+            msg.reply('vào voice trước đi giáo sư ơi :V');
         }
     }
-    if (message.content.startsWith(prefix + "avatar")) {
-        let user = message.mentions.users.first() || message.author;
+    if (msg.content.startsWith(prefix + "avatar")) {
+        let user = msg.mentions.users.first() || message.author;
         let embed = new Discord.RichEmbed()
         .setAuthor(`${user.tag}`)
         .setImage(user.avatarURL)
         .setColor("RANDOM")
-        message.channel.send(embed)
+        msg.channel.send(embed)
     }
-    if(message.content.startsWith(prefix + "leave")){
-        if(message.guild.voiceConnection)
-        message.guild.voiceConnection.disconnect();
+    if(msg.content.startsWith(prefix + "leave")){
+        if(msg.guild.voiceConnection)
+        msg.guild.voiceConnection.disconnect();
     }
-    let args = message.content.slice(prefix.length).trim().split(' ');
+    let args = msg.content.slice(prefix.length).trim().split(' ');
     let command = args.shift().toLowerCase();
-    if(message.content.startsWith(prefix + "say")) {
+    if(msg.content.startsWith(prefix + "say")) {
         let say = args.join(' ')
-        message.delete();
-        message.channel.send(say);
+        msg.delete();
+        msg.channel.send(say);
     }
-    if(message.content.startsWith(prefix + "kick")){
-        let user = message.mentions.users.first();
+    if(msg.content.startsWith(prefix + "kick")){
+        let user = msg.mentions.users.first();
         if(user) {
-            let member = message.guild.member(user);
+            let member = msg.guild.member(user);
             if(member) {
                 member.kick('Opsional reason that will display in audit log').then(() => {
-                    message.reply(`Bay màu-ed, press F to tưởng nhớ ${user.tag}`);
+                    msg.reply(`Bay màu-ed, press F to tưởng nhớ ${user.tag}`);
                 }).catch(err => {
-                    message.reply('Không thể cản phá :<');
+                    msg.reply('Không thể cản phá :<');
                     console.error(err);
                 });
             }else{
-                message.reply("Ai thế nhỉ? :V")
+                msg.reply("Ai thế nhỉ? :V")
             }
         }else{
-            message.reply('Chưa chọn đối tượng để ulti');
+            msg.reply('Chưa chọn đối tượng để ulti');
         }
     }
-    if(message.content.startsWith(prefix + "lenny")){
-        message.delete();
-        message.channel.send("( ͡° ʖ̯ ͡°)")
+    if(msg.content.startsWith(prefix + "lenny")){
+        msg.delete();
+        msg.channel.send("( ͡° ʖ̯ ͡°)")
     }
 })
 
