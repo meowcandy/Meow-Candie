@@ -1,2 +1,2 @@
-# --candy
+# candy
 cc
