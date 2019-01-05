@@ -181,4 +181,5 @@ client.on('message', message => {
         } else {
             message.reply('Giáo sư chưa chọn đối tượng để ulti :V');
         };
+    }
 });
