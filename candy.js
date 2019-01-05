@@ -23,7 +23,7 @@ var skippers = [];
 
 var guilds = {};
 
-client.login(discord_token);
+client.login(process.env.discord_token);
 
 client.on('message', function (message) {
     const member = message.member;
@@ -164,4 +164,21 @@ client.on('message', message => {
 		message.delete();
 		message.channel.send(say);
 	};
+	if(message.content.startsWith(prefix + "kick")) {
+		let user = message.mentions.users.first();
+        if (user) {
+            let member = message.guild.member(user);
+            if (member) {
+                member.kick('Optional reason that will display in the audit logs').then(() =>{
+                    message.reply(`đã cho ${user.tag} ra đảo `);
+                }).catch(err =>{
+                    message.reply('Không thể cản phá :<');
+                    console.error(err);
+                });
+            } else {
+                message.reply('Ai thế nhỉ? :V');
+            }   
+        } else {
+            message.reply('Giáo sư chưa chọn đối tượng để ulti :V');
+        };
 });
