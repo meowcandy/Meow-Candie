@@ -1,159 +1,167 @@
-const Discord = require('discord.js')
-const yt = require('ytdl-core');
-const tokens = require('./tokens.json');
-const bot = new Discord.Client()
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const ytdl = require("ytdl-core");
+const request = require("request");
+const fs = require("fs");
+const getYouTubeID = require("get-youtube-id");
+const fetchVideoInfo = require("youtube-info");
 
-let queue = {};
+var config = JSON.parse(fs.readFileSync('./setting.json', 'utf-8'));
 
-const commands = {
-	'gay': (msg) => {
-		if (queue[msg.guild.id] === undefined) return msg.channel.sendMessage(`thêm bài hát vào danh sách ${tokens.prefix}add`);
-		if (!msg.guild.voiceConnection) return commands.join(msg).then(() => commands.play(msg));
-		if (queue[msg.guild.id].playing) return msg.channel.sendMessage('đang gáy');
-		let dispatcher;
-		queue[msg.guild.id].playing = true;
+const yt_api_key = config.yt_api_key;
+const bot_controller = config.bot_controller;
+const prefix = config.prefix;
+const discord_token = config.discord_token;
 
-		console.log(queue);
-		(function play(song) {
-			console.log(song);
-			if (song === undefined) return msg.channel.sendMessage('Ko đc gáy nữa r :<').then(() => {
-				queue[msg.guild.id].playing = false;
-				msg.member.voiceChannel.leave();
-			});
-			msg.channel.sendMessage(`Gáy: **${song.title}** theo yêu cầu của: **${song.requester}**`);
-			dispatcher = msg.guild.voiceConnection.playStream(yt(song.url, { audioonly: true }), { passes : tokens.passes });
-			let collector = msg.channel.createCollector(m => m);
-			collector.on('message', m => {
-				if (m.content.startsWith(tokens.prefix + 'dung')) {
-					msg.channel.sendMessage('tạm dừng').then(() => {dispatcher.pause();});
-				} else if (m.content.startsWith(tokens.prefix + 'tiep')){
-					msg.channel.sendMessage('tiếp tục').then(() => {dispatcher.resume();});
-				} else if (m.content.startsWith(tokens.prefix + 'skip')){
-					msg.channel.sendMessage('đã skip').then(() => {dispatcher.end();});
-				} else if (m.content.startsWith('volume+')){
-					if (Math.round(dispatcher.volume*50) >= 100) return msg.channel.sendMessage(`Volume: ${Math.round(dispatcher.volume*50)}%`);
-					dispatcher.setVolume(Math.min((dispatcher.volume*50 + (2*(m.content.split('+').length-1)))/50,2));
-					msg.channel.sendMessage(`Volume: ${Math.round(dispatcher.volume*50)}%`);
-				} else if (m.content.startsWith('volume-')){
-					if (Math.round(dispatcher.volume*50) <= 0) return msg.channel.sendMessage(`Volume: ${Math.round(dispatcher.volume*50)}%`);
-					dispatcher.setVolume(Math.max((dispatcher.volume*50 - (2*(m.content.split('-').length-1)))/50,0));
-					msg.channel.sendMessage(`Volume: ${Math.round(dispatcher.volume*50)}%`);
-				} else if (m.content.startsWith(tokens.prefix + 'time')){
-					msg.channel.sendMessage(`time: ${Math.floor(dispatcher.time / 60000)}:${Math.floor((dispatcher.time % 60000)/1000) <10 ? '0'+Math.floor((dispatcher.time % 60000)/1000) : Math.floor((dispatcher.time % 60000)/1000)}`);
-				}
-			});
-			dispatcher.on('end', () => {
-				collector.stop();
-				play(queue[msg.guild.id].songs.shift());
-			});
-			dispatcher.on('error', (err) => {
-				return msg.channel.sendMessage('error: ' + err).then(() => {
-					collector.stop();
-					play(queue[msg.guild.id].songs.shift());
-				});
-			});
-		})(queue[msg.guild.id].songs.shift());
-	},
-	'j': (msg) => {
-		return new Promise((resolve, reject) => {
-			const voiceChannel = msg.member.voiceChannel;
-			if (!voiceChannel || voiceChannel.type !== 'voice') return msg.reply('Chui vào kênh voice trước đi giáo sư :V');
-			voiceChannel.join().then(connection => resolve(connection)).catch(err => reject(err));
-			msg.reply("Oke đã zo")
-		});
-	},
-	'cut': (msg) => {
-		return new Promise((resolve, reject) => {
-			const voiceChannel = msg.member.voiceChannel;
-			voiceChannel.leave().then(disconnect => resolve(disconnect)).catch(err => reject(err));
-		});
-	},
-	'add': (msg) => {
-		let url = msg.content.split(' ')[1];
-		if (url == '' || url === undefined) return msg.channel.sendMessage(`bạn phải add link video YouTube hoặc ID ${tokens.prefix}add`);
-		yt.getInfo(url, (err, info) => {
-			if(err) return msg.channel.sendMessage('link YouTube không hợp lệ: ' + err);
-			if (!queue.hasOwnProperty(msg.guild.id)) queue[msg.guild.id] = {}, queue[msg.guild.id].playing = false, queue[msg.guild.id].songs = [];
-			queue[msg.guild.id].songs.push({url: url, title: info.title, requester: msg.author.username});
-			msg.channel.sendMessage(`đã thêm **${info.title}** vào danh sách`);
-		});
-	},
-	'list': (msg) => {
-		if (queue[msg.guild.id] === undefined) return msg.channel.sendMessage(`thêm vào danh sách ${tokens.prefix}add`);
-		let tosend = [];
-		queue[msg.guild.id].songs.forEach((song, i) => { tosend.push(`${i+1}. ${song.title} - được yêu cầu bởi: ${song.requester}`);});
-		msg.channel.sendMessage(`__**${msg.guild.name} danh sách nhạc:**__ hiện tại **${tosend.length}** bài hát ${(tosend.length > 15 ? '*[Only next 15 shown]*' : '')}\n\`\`\`${tosend.slice(0,15).join('\n')}\`\`\``);
-	},
-	'help': (msg) => {
-		let tosend = ['```xl','CHỨC NĂNG GÁY', tokens.prefix + 'j : "vào voice"',tokens.prefix + 'cut : "rời khỏi kênh"',	tokens.prefix + 'them : "thêm link YouTube vào danh sách"', tokens.prefix + 'list : "hiển thị danh sách,hiển thị max 15 bài."', tokens.prefix + 'gay : "Gáy lên"', '', 'CÁC LỆNH KHI ĐANG PHÁT NHẠC:'.toUpperCase(), tokens.prefix + 'dung : "tạm dừng"',	tokens.prefix + 'tiep : "tiếp tục"', tokens.prefix + 'skip : "bỏ qua"', tokens.prefix + 'time : "thời gian đang phát bài hát."',	'volume+(+++) : "tăng âm lượng 2%/+"',	'volume-(---) : "Giảm âm lượng 2%/-"',
-		'CÁC LỆNH KHÁC', tokens.prefix + 'say : "bot nói"', tokens.prefix + 'lenny : "( ͡° ʖ̯ ͡°)"','```'];
-		msg.channel.sendMessage(tosend.join('\n'));
-    },
-};
-bot.on('ready', ()=>{
-    console.log("Ai am back!");
-    bot.user.setStatus('available')
-    bot.user.setPresence({
-        game: {
-            name: 'Toi co don :<',
-            type: "LISTENING"
+var queue = [];
+var queueNames = [];
+var isPlaying = false;
+var dispatcher = null;
+var voiceChannel = null;
+var skipReq = 0;
+var skippers = [];
+
+var guilds = {};
+
+client.login(discord_token);
+
+client.on('message', function (message) {
+    const member = message.member;
+    const mess = message.content.toLowerCase();
+    const args = message.content.split(' ').slice(1).join(" ");
+
+    if (mess.startsWith(prefix + "p")){
+        if (queue.length > 0 || isPlaying) {
+            getID(args, function (id) {
+                add_to_queue(id)
+                fetchVideoInfo(id, function(err, videoInfo) {
+                    if (err) throw new Error(err);
+                    message.delete();
+                    message.channel.send(" Gáy: **" + videoInfo.title + "**")
+                });
+            });
+        }else{
+            isPlaying = true;
+            getID(args, function(id){
+                queue.push("placeholder");
+                playMusic(id, message);
+                fetchVideoInfo(id, function(err, videoInfo) {
+                    if (err) throw new Error(err);
+                    queueNames.push(videoInfo.title);
+                    message.channel.send(" Gáy: **" + videoInfo.title + "**")
+                });
+            });
         }
-    })
-});   
-bot.on('message', (message)=>{
-    if (!msg.guild) return;
-    if (msg.content.startsWith(prefix + "j")){
-        if (msg.member.voiceChannel){
-            msg.member.voiceChannel.join()
-            .then(connection => {
-                msg.reply('Oke đã chui zo');
-            })
-            .catch(console.log);
-        }else {
-            msg.reply('vào voice trước đi giáo sư ơi :V');
-        }
+    } else if (mess.startsWith(prefix + "skip")) {
+                skip_song(message);
+                message.channel.send("Đã skip")
     }
-    if (msg.content.startsWith(prefix + "avatar")) {
-        let user = msg.mentions.users.first() || message.author;
+});
+client.on('ready', () => {
+	console.log('Am back');
+	client.user.setStatus('available')
+	client.user.setPresence({
+		game: {
+			name: 'Toi co don',
+			type: "LISTENING"
+		}
+    })
+});
+
+
+function skip_song(message) {
+    dispatcher.end();
+    if(queue.length > 1) {
+        playMusic(queue[0]. message)
+    } else {
+        skipReq = 0
+        skippers = [];
+    }
+}
+
+function playMusic(id, message) {
+    voiceChannel = message.member.voiceChannel;
+
+    voiceChannel.join().then(function (connection){
+        stream = ytdl("https://www.youtube.com/watch?v=" + id,{
+            filter: 'audioonly'
+        });
+        skipReq = 0;
+        skippers = [];
+
+        dispatcher = connection.playStream(stream);
+        dispatcher.on('end', function() {
+            skipReq = 0;
+            skippers = [];
+            queue.shift();
+            queueNames.shift();
+            if (queue.length === 0) {
+                queue = [];
+                queueNames = [];
+                isPlaying = false;
+            } else {
+                setTimeout(function () {
+                    playMusic(queue[0], message);
+                }, 100);
+            }
+        });
+    })
+}
+
+function getID(str, cb) {
+    if (isYoutube(str)) {
+        cb(getYouTubeID(str));
+    }else{
+        search_video(str, function (id) {
+            cb(id);
+        });
+    }
+}
+
+function add_to_queue(strID) {
+    if (isYoutube(strID)) {
+        queue.push(getYouTubeID(strID));
+    }else{
+        queue.push(strID);
+    }
+}
+
+function search_video(query, callback) {
+    request("https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) + "&key" + yt_api_key, function(error, response, body) {
+        var json = JSON.parse(body);
+        if (!json.items) callback("3_-a9nVZYjk");
+        else {
+            callback(json.items.id.videoID);
+        }
+    });
+}
+
+function isYoutube(str) {
+    return str.toLowerCase().indexOf("youtube.com") > -1;
+}
+
+client.on('message', message => {
+	if (message.content.startsWith(prefix + "ava")) {
+        let user = message.mentions.users.first() || message.author;
         let embed = new Discord.RichEmbed()
         .setAuthor(`${user.tag}`)
         .setImage(user.avatarURL)
-        .setColor("RANDOM")
-        msg.channel.send(embed)
+        .setColor('RANDOM')
+        message.channel.send(embed)
+	}
+	if(message.content.startsWith(prefix + "lenny sad")){
+		message.delete();
+		message.channel.send("( ͡° ʖ̯ ͡°)");
+	}
+	if(message.content.startsWith(prefix + "lenny dam")){
+		message.delete();
+		message.channel.send("(˵ ͡° ͜ʖ ͡°˵)");
     }
-    if(msg.content.startsWith(prefix + "leave")){
-        if(msg.guild.voiceConnection)
-        msg.guild.voiceConnection.disconnect();
-    }
-    let args = msg.content.slice(prefix.length).trim().split(' ');
+    let args = message.content.slice(prefix.length).trim().split(' ');
     let command = args.shift().toLowerCase();
-    if(msg.content.startsWith(prefix + "say")) {
-        let say = args.join(' ')
-        msg.delete();
-        msg.channel.send(say);
-    }
-    if(msg.content.startsWith(prefix + "kick")){
-        let user = msg.mentions.users.first();
-        if(user) {
-            let member = msg.guild.member(user);
-            if(member) {
-                member.kick('Opsional reason that will display in audit log').then(() => {
-                    msg.reply(`Bay màu-ed, press F to tưởng nhớ ${user.tag}`);
-                }).catch(err => {
-                    msg.reply('Không thể cản phá :<');
-                    console.error(err);
-                });
-            }else{
-                msg.reply("Ai thế nhỉ? :V")
-            }
-        }else{
-            msg.reply('Chưa chọn đối tượng để ulti');
-        }
-    }
-    if(msg.content.startsWith(prefix + "lenny")){
-        msg.delete();
-        msg.channel.send("( ͡° ʖ̯ ͡°)")
-    }
-})
-
-bot.login(process.env.BOT_TOKEN);
+	if(message.content.startsWith(prefix + "say")) {
+		let say = args.join(' ');
+		message.delete();
+		message.channel.send(say);
+	};
+});
