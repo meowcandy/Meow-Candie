@@ -218,4 +218,4 @@ Client.on('message', (message)=>{
 });
 
 
-Client.login("NTMyNjE3MzQ3NjYwMjUxMTM2.DxfPyg.wdCZIkgpExcZIR2pVi1eg3jNgHY");
+Client.login(process.env.BOT_TOKEN);
