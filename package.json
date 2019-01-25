@@ -2,7 +2,7 @@
   "name": "candy",
   "version": "1.0.0",
   "description": "",
-  "main": "candy.js",
+  "main": "candie.js",
   "dependencies": {
     "discord.js": "^11.4.2",
     "ffmpeg-binaries": "^4.0.0",
