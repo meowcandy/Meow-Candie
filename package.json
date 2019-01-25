@@ -1,0 +1,25 @@
+{
+"name": "Crime-Dark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "ffmpeg-binaries": "^4.0.0",
+    "fs": "0.0.1-security",
+    "get": "^1.4.0",
+    "google": "^2.1.0",
+    "moment": "^2.23.0",
+    "opusscript": "0.0.6",
+    "random-number": "0.0.9",
+    "request": "^2.88.0",
+    "ytdl-core": "^0.28.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
