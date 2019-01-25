@@ -1,2 +1,2 @@
 
-worker: node Candie.js
+worker: node bot.js
