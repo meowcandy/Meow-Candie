@@ -83,7 +83,7 @@ Client.on('message', (message)=>{
 		.addField("Ngày gia nhập:", `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
 		.addField("Bot:", `${user.bot}`, true)
 		.addField("Trạng thái:", `${user.presence.status}`, true)
-		.addField("Game:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
+		.addField("Đang chơi game:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
 		.addField("Có những roles:", member.roles.map(roles => `${roles.name}`).join(', '), true)
 		.setFooter(`Soi theo yêu cầu của ${message.author.username}#${message.author.discriminator}`)
         message.channel.send({embed});
