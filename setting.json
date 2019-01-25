@@ -1,8 +1,0 @@
-{
-    "yt_api_key" : "AIzaSyDL9FQXOiQKqqqqkk",
-    "discord_token" : "process.env.BOT_TOKEN",
-    	"adminID" : "528597257138733077",
-    "bot_controller" : "role id",
-    "prefix" : "^"
-    	"passes" : 1
-}
