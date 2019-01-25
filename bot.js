@@ -78,15 +78,15 @@ Client.on('message', (message)=>{
 		.setThumbnail(user.avatarURL)
 		.setTitle(`${user.username}#${user.discriminator}`)
 		.addField("ID:", `${user.id}`, true)
-		.addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
-		.addField("Created At:", `${moment.utc(user.createdAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
-		.addField("Joined Server:", `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
+		.addField("Biệt danh:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
+		.addField("Ngày tạo:", `${moment.utc(user.createdAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
+		.addField("Ngày gia nhập:", `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
 		.addField("Bot:", `${user.bot}`, true)
-		.addField("Status:", `${user.presence.status}`, true)
+		.addField("Trạng thái:", `${user.presence.status}`, true)
 		.addField("Game:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
-		.addField("Roles:", member.roles.map(roles => `${roles.name}`).join(', '), true)
-		.setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
-     message.channel.send({embed});
+		.addField("Có những roles:", member.roles.map(roles => `${roles.name}`).join(', '), true)
+		.setFooter(`Soi theo yêu cầu của ${message.author.username}#${message.author.discriminator}`)
+        message.channel.send({embed});
     }
     
     if(message.content.startsWith(prefix + "setgame")){
@@ -216,6 +216,5 @@ Client.on('message', (message)=>{
     message.channel.send(embed)
 }
 });
-
 
 Client.login(process.env.BOT_TOKEN);
