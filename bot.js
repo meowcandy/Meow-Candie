@@ -171,7 +171,7 @@ Client.on('message', (message)=>{
 
     }
     if (message.content.startsWith(prefix + "hug")) {
-        if (!message.mentions.users.first()) return message.channel.send("Adu. Mày ôm được oxi à...");
+        if (!message.mentions.users.first()) return message.channel.send("Nani ôm không khí hả giáo sư?");
     let r = rn({
         min: 0,
         max: hug.length - 1,
