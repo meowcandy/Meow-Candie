@@ -2,24 +2,18 @@
   "name": "candy",
   "version": "1.0.0",
   "description": "",
-  "main": "candie.js",
+  "main": "Candie.js",
   "dependencies": {
     "discord.js": "^11.4.2",
+     "encrypt_decrypt": "^1.0.0",
     "ffmpeg-binaries": "^4.0.0",
-    "fs": "0.0.1-security",
-    "get": "^1.4.0",
-    "google": "^2.1.0",
-    "google-translate-api": "^2.3.0",
-    "moment": "^2.23.0",
     "opusscript": "0.0.6",
-    "random-number": "0.0.9",
-    "request": "^2.88.0",
-    "youtube-id": "^1.0.0",
+    "simple-youtube-api": "^5.1.1",
     "ytdl-core": "^0.28.3"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node candie.js",
+    "start": "node Candie.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
