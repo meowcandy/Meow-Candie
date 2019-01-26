@@ -16,10 +16,10 @@ function checkDays(date) {
     return days + (days == 1 ? " day" : " days") + " ago";
 }
 
-client.on('ready', () => {
+Client.on('ready', () => {
 	console.log('Am back');
-	client.user.setStatus('available')
-	client.user.setPresence({
+	Client.user.setStatus('available')
+	Client.user.setPresence({
 		game: {
 			name: 'Tìm em',
 			type: "LISTENING"
