@@ -16,10 +16,16 @@ function checkDays(date) {
     return days + (days == 1 ? " day" : " days") + " ago";
 }
 
-Client.on('ready', ()=>{
-    console.log("am back");
-    Client.user.setGame('Alone')
-})
+client.on('ready', () => {
+	console.log('Am back');
+	client.user.setStatus('available')
+	client.user.setPresence({
+		game: {
+			name: 'Tìm em',
+			type: "LISTENING"
+		}
+    })
+});
 
 Client.on('message', (message)=>{
     if(message.content.startsWith(prefix + "info")){
