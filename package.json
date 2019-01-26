@@ -1,5 +1,5 @@
 {
-"name": "Crime-Dark",
+"name": "Candie",
   "version": "1.0.0",
   "description": "",
   "main": "bot.js",
@@ -11,7 +11,7 @@
     "moment": "^2.23.0",
     "opusscript": "0.0.6",
     "random-number": "0.0.9",
-    "request": "^2.88.0",
+    "request": "^2.88.0"
   },
   "devDependencies": {},
   "scripts": {
