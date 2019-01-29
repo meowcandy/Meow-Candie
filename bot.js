@@ -96,7 +96,7 @@ Client.on('message', (message)=>{
         message.channel.send(say);  
     }
     if (!message.guild) return;
-    if (message.content.startsWith(prefix + "join")){
+    if (message.content.startsWith(prefix + "j")){
         if (message.member.voiceChannel){
             message.member.voiceChannel.join()
             .then(connection => {
@@ -108,7 +108,7 @@ Client.on('message', (message)=>{
         }
     }
 
-    if(message.content.startsWith(prefix + "leave")){
+    if(message.content.startsWith(prefix + "cut")){
         if(message.guild.voiceConnection)
         message.guild.voiceConnection.disconnect()
     }
