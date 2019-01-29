@@ -21,8 +21,8 @@ Client.on('ready', () => {
 	Client.user.setStatus('available')
 	Client.user.setPresence({
 		game: {
-			name: 'Tìm em',
-			type: "LISTENING"
+			name: 'Alone',
+			type: "PLAYING"
 		}
     })
 });
