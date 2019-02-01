@@ -258,7 +258,7 @@ Client.on('message', (message)=>{
         message.delete();
         message.channel.send(embed)
     }
-    if (message.content.startsWith(prefix + "kt") + message.mentions.users.first()) {
+    if (message.content.startsWith(prefix + "kt")) {
         let r = rn({
             min: 0,
             max: triggered.length - 1,
