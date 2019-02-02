@@ -253,7 +253,7 @@ Client.on('message', (message)=>{
         });
         let image = gay[r];
         let embed = new Discord.RichEmbed()
-        .setDescription('**' 'Adu thanh niên' + message.author + '** gáy to vãi lizz xD \n')
+        .setDescription('** Adu thanh niên' + message.author + '** gáy to vãi lizz xD \n')
         .setImage(image)
         .setColor('RANDOM')
         message.delete();
