@@ -2,12 +2,12 @@ const Discord = require("discord.js");
 const Client = new Discord.Client();
 const prefix = "^";
 const hug = ["https://s-media-cache-ak0.pinimg.com/originals/49/a2/1e/49a21e182fcdfb3e96cc9d9421f8ee3f.gif", "https://media.giphy.com/media/xJlOdEYy0r7ZS/giphy.gif","https://myanimelist.cdn-dena.com/s/common/uploaded_files/1461071296-7451c05f5aae134e2cceb276b085a871.gif", "http://i0.kym-cdn.com/photos/images/original/000/931/030/394.gif", "https://media.tenor.co/images/1171c186f9130d1efa4a186ad4371e8c/tenor.gif", "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0413/epic-hugs-friends-pikachu.gif","https://cdn.weeb.sh/images/Hyv6uOQPZ.gif","https://cdn.weeb.sh/images/r1bAksn0W.gif","https://cdn.weeb.sh/images/rJ_slRYFZ.gif","https://cdn.weeb.sh/images/BkHA_O7v-.gif","https://cdn.weeb.sh/images/r1kC_dQPW.gif","https://cdn.weeb.sh/images/r1R3_d7v-.gif","https://cdn.weeb.sh/images/Sk2gmRZZG.gif",
-"https://cdn.weeb.sh/images/BysjuO7D-.gif","https://cdn.weeb.sh/images/BJx2l0ttW.gif","https://cdn.weeb.sh/images/Sy65_OQvZ.gif", "https://cdn.weeb.sh/images/Sk80wyhqz.gif", "https://cdn.weeb.sh/images/Sk-xxs3C-.gif", "https://cdn.weeb.sh/images/S1OAduQwZ.gif"]
-const pat = ["https://cdn.weeb.sh/images/ByDVw9uO-.png", "https://cdn.weeb.sh/images/ryXj1JKDb.gif", "https://cdn.weeb.sh/images/ByZwv5udZ.gif", "https://cdn.weeb.sh/images/BkaRWA4CZ.gif", "https://cdn.weeb.sh/images/Sk2f7J39G.gif", "https://cdn.weeb.sh/images/ByZ7wqOu-.png", "https://cdn.weeb.sh/images/B1SOzCV0W.gif", "https://cdn.weeb.sh/images/r1Y5L6NCZ.gif", "https://cdn.weeb.sh/images/rJavp1KVM.gif", "https://cdn.weeb.sh/images/HyWlxJFvb.gif", "https://cdn.weeb.sh/images/ByOc1ktv-.gif", "https://cdn.weeb.sh/images/B1TQcTNCZ.gif", "https://cdn.weeb.sh/images/H1MBvc_u-.gif", "https://cdn.weeb.sh/images/rkBZkRttW.gif"]
+"https://cdn.weeb.sh/images/BysjuO7D-.gif","https://cdn.weeb.sh/images/BJx2l0ttW.gif","https://cdn.weeb.sh/images/Sy65_OQvZ.gif", "https://cdn.weeb.sh/images/Sk80wyhqz.gif", "https://cdn.weeb.sh/images/Sk-xxs3C-.gif", "https://cdn.weeb.sh/images/S1OAduQwZ.gif", "https://cdn.weeb.sh/images/S18oOuQw-.gif", "https://cdn.weeb.sh/images/ryg2dd7wW.gif", "https://cdn.weeb.sh/images/SknauOQwb.gif", "https://cdn.weeb.sh/images/ryPix0Ft-.gif", "https://cdn.weeb.sh/images/B11CDkhqM.gif", "https://cdn.weeb.sh/images/Sk80wyhqz.gif", "https://cdn.weeb.sh/images/BkZngAYtb.gif", "https://cdn.weeb.sh/images/BkkgL8mDW.gif", ""]
+const pat = ["https://cdn.weeb.sh/images/ByDVw9uO-.png", "https://cdn.weeb.sh/images/ryXj1JKDb.gif", "https://cdn.weeb.sh/images/ByZwv5udZ.gif", "https://cdn.weeb.sh/images/BkaRWA4CZ.gif", "https://cdn.weeb.sh/images/Sk2f7J39G.gif", "https://cdn.weeb.sh/images/ByZ7wqOu-.png", "https://cdn.weeb.sh/images/B1SOzCV0W.gif", "https://cdn.weeb.sh/images/r1Y5L6NCZ.gif", "https://cdn.weeb.sh/images/rJavp1KVM.gif", "https://cdn.weeb.sh/images/HyWlxJFvb.gif", "https://cdn.weeb.sh/images/ByOc1ktv-.gif", "https://cdn.weeb.sh/images/B1TQcTNCZ.gif", "https://cdn.weeb.sh/images/H1MBvc_u-.gif", "https://cdn.weeb.sh/images/rkBZkRttW.gif", "https://cdn.weeb.sh/images/HJRIlihCZ.gif", ""]
 const lick = ["https://cdn.weeb.sh/images/ryGpGsnAZ.gif", "https://cdn.weeb.sh/images/H1EJxR_vZ.gif", "https://cdn.weeb.sh/images/H1zlgRuvZ.gif", "https://cdn.weeb.sh/images/rktygCOD-.gif", "https://cdn.weeb.sh/images/rJ6hrQr6-.gif", "https://cdn.weeb.sh/images/H13HS7S6-.gif", "https://cdn.weeb.sh/images/Sk15iVlOf.gif", "https://cdn.weeb.sh/images/rykRHmB6W.gif", "https://cdn.weeb.sh/images/BkvTBQHaZ.gif", "https://cdn.weeb.sh/images/Bkxge0uPW.gif", "https://cdn.discordapp.com/attachments/537169976637784064/539977703223459861/liem.gif"]
-const bad = ["https://cdn.weeb.sh/images/H1eoWIDdb.gif", "https://cdn.weeb.sh/images/Bk_oZUP_-.gif", "https://cdn.weeb.sh/images/HkZ6v0FOb.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", "https://cdn.weeb.sh/images/ByIcZUPuZ.gif", "https://cdn.weeb.sh/images/BJsi-8vd-.gif", "https://cdn.weeb.sh/images/S1yhZ8vuW.gif", ]
-const tat = ["https://cdn.weeb.sh/images/HkK2mkYPZ.gif", "https://cdn.weeb.sh/images/Sk0RmyYvb.gif", "https://cdn.weeb.sh/images/SkdyfWCSf.gif", "https://cdn.weeb.sh/images/B1-nQyFDb.gif", "https://cdn.weeb.sh/images/rJ4141YDZ.gif", "https://cdn.weeb.sh/images/Hk6JVkFPb.gif", "https://cdn.weeb.sh/images/r1PXzRYtZ.gif", "https://cdn.weeb.sh/images/ByHUMRNR-.gif", "https://cdn.weeb.sh/images/rJrnXJYPb.gif", "https://cdn.weeb.sh/images/Hy09QJFDZ.gif", "https://cdn.weeb.sh/images/rJvR71KPb.gif", "https://cdn.weeb.sh/images/Bkj-oaV0Z.gif", "https://cdn.weeb.sh/images/BJ8o71tD-.gif", "https://cdn.weeb.sh/images/rJgTQ1tvb.gif", "https://cdn.weeb.sh/images/BJLCX1Kw-.gif", "https://cdn.weeb.sh/images/ry2tWxcyf.gif", "https://cdn.weeb.sh/images/SkSCyl5yz.gif", "https://cdn.weeb.sh/images/HkJ6-e91z.gif"]
-const kiss = ["https://cdn.weeb.sh/images/HJmunTOw-.gif", "https://cdn.weeb.sh/images/BJMX2TuPb.gif", "https://cdn.weeb.sh/images/Byh57gqkz.gif", "https://cdn.weeb.sh/images/S1E1npuvb.gif", "https://cdn.weeb.sh/images/rJ6PWohA-.gif", "https://cdn.weeb.sh/images/HJYghpOP-.gif", "https://cdn.weeb.sh/images/Sksk4l51z.gif", "https://cdn.weeb.sh/images/SyY0j6Ov-.gif"]
+const bad = ["https://cdn.weeb.sh/images/H1eoWIDdb.gif", "https://cdn.weeb.sh/images/Bk_oZUP_-.gif", "https://cdn.weeb.sh/images/HkZ6v0FOb.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", "https://cdn.weeb.sh/images/ByIcZUPuZ.gif", "https://cdn.weeb.sh/images/BJsi-8vd-.gif", "https://cdn.weeb.sh/images/S1yhZ8vuW.gif", "https://cdn.weeb.sh/images/H1n57yYP-.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", "https://cdn.weeb.sh/images/H1n57yYP-.gif", ""]
+const tat = ["https://cdn.weeb.sh/images/HkK2mkYPZ.gif", "https://cdn.weeb.sh/images/Sk0RmyYvb.gif", "https://cdn.weeb.sh/images/SkdyfWCSf.gif", "https://cdn.weeb.sh/images/B1-nQyFDb.gif", "https://cdn.weeb.sh/images/rJ4141YDZ.gif", "https://cdn.weeb.sh/images/Hk6JVkFPb.gif", "https://cdn.weeb.sh/images/r1PXzRYtZ.gif", "https://cdn.weeb.sh/images/ByHUMRNR-.gif", "https://cdn.weeb.sh/images/rJrnXJYPb.gif", "https://cdn.weeb.sh/images/Hy09QJFDZ.gif", "https://cdn.weeb.sh/images/rJvR71KPb.gif", "https://cdn.weeb.sh/images/Bkj-oaV0Z.gif", "https://cdn.weeb.sh/images/BJ8o71tD-.gif", "https://cdn.weeb.sh/images/rJgTQ1tvb.gif", "https://cdn.weeb.sh/images/BJLCX1Kw-.gif", "https://cdn.weeb.sh/images/ry2tWxcyf.gif", "https://cdn.weeb.sh/images/SkSCyl5yz.gif", "https://cdn.weeb.sh/images/HkJ6-e91z.gif", "https://cdn.weeb.sh/images/rkpAXa5bG.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", ""]
+const kiss = ["https://cdn.weeb.sh/images/HJmunTOw-.gif", "https://cdn.weeb.sh/images/BJMX2TuPb.gif", "https://cdn.weeb.sh/images/Byh57gqkz.gif", "https://cdn.weeb.sh/images/S1E1npuvb.gif", "https://cdn.weeb.sh/images/rJ6PWohA-.gif", "https://cdn.weeb.sh/images/HJYghpOP-.gif", "https://cdn.weeb.sh/images/Sksk4l51z.gif", "https://cdn.weeb.sh/images/SyY0j6Ov-.gif", "https://cdn.weeb.sh/images/S1qZksSXG.gif", "https://cdn.weeb.sh/images/Bkk_hpdv-.gif", ""]
 const triggered = ["https://cdn.discordapp.com/attachments/540655675622293505/540655752600092713/ryyMcytDZ.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540667240123596800/Gay.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540667711517360168/giphy.gif", "https://media.giphy.com/media/kRgj0fQLxhVoA/giphy.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540669457660641280/giphy_3.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540669680663265320/giphy_4.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540667766986768384/tenor.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540667752038400020/tenor_1.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540670358294888450/tenor_2.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540668313127223317/Liem.jpg"]
 const gay = ["https://cdn.discordapp.com/attachments/540655675622293505/540667240123596800/Gay.gif"]
 const poke = ["https://cdn.weeb.sh/images/H1x2HxyYD-.gif", "https://cdn.weeb.sh/images/HkxwlkKPb.gif", "https://cdn.weeb.sh/images/rJ0hlsnR-.gif", "https://cdn.weeb.sh/images/B14SJlTQG.gif", "https://cdn.weeb.sh/images/Hk2HekKD-.gif", "https://cdn.weeb.sh/images/SyQzRaFFb.gif", "https://cdn.weeb.sh/images/rkaUe1YPb.gif", "https://cdn.weeb.sh/images/SyJzRTKFW.gif", "https://cdn.weeb.sh/images/rkeaUeJKD-.gif", "https://cdn.weeb.sh/images/SydLxJFwW.gif", "https://cdn.weeb.sh/images/H1fMRpYtb.gif", "https://cdn.weeb.sh/images/rktSlkKvb.gif", "https://cdn.weeb.sh/images/r1v6xoh0Z.gif", "https://cdn.weeb.sh/images/rkB8eJYPZ.gif", "https://cdn.weeb.sh/images/B1oSgytwW.gif", "https://cdn.weeb.sh/images/rJzUe1FwZ.gif", "https://cdn.weeb.sh/images/HJZpLxkKDb.gif", "https://cdn.weeb.sh/images/HkjjLb0rM.gif", "https://cdn.weeb.sh/images/Sk_rl1Kw-.gif"]
@@ -48,25 +48,25 @@ Client.on('message', (message)=>{
 		.setThumbnail(user.avatarURL)
 		.setTitle(`${user.username}#${user.discriminator}`)
 		.addField("ID:", `${user.id}`, true)
-		.addField("Biệt danh:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
+		.addField("Biệt danh:", `${member.nickname !== null ? `${member.nickname}` : 'Ko biệt danh'}`, true)
 		.addField("Ngày tạo:", `${moment.utc(user.createdAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
 		.addField("Ngày gia nhập:", `${moment.utc(member.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
-		.addField("Bot:", `${user.bot}`, true)
 		.addField("Trạng thái:", `${user.presence.status}`, true)
-		.addField("Đang chơi game:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
+		.addField("Đang chơi game:", `${user.presence.game ? user.presence.game.name : 'Ko chơi gì cả'}`, true)
 		.addField("Có những roles:", member.roles.map(roles => `${roles.name}`).join(', '), true)
 		.setFooter(`Soi theo yêu cầu của ${message.author.username}#${message.author.discriminator}`)
         message.channel.send({embed});
     }
     
-    if(message.content.startsWith(prefix + "setgame")){
+    if(message.content.startsWith(prefix + "quay")){
         let args = message.content.slice(prefix.length).trim().split(' ');
         let command1 = args.shift().toLowerCase();
         if(!args[0]) return;
-  if(args[0] === 'game') return message.channel.send('Chơi gì bh?');
-  setGame = args.join(" ");
-  message.channel.send(`Đang quẩy \`${args}\`.`);
-  Client.user.setGame(`${setGame}`);
+    if(args[0] === 'game') return message.channel.send('Chơi gì bh?');
+    setGame = args.join(" ");
+    message.delete();
+    message.channel.send(`Đang quẩy \`${args}\`.`);
+    Client.user.setGame(`${setGame}`);
     };
 
     if(message.content.startsWith(prefix + "lenny")){
@@ -85,14 +85,14 @@ Client.on('message', (message)=>{
     }
     if (message.content.startsWith(prefix + "ava")) {
         let user = message.mentions.users.first() ? message.mentions.users.first() : message.author
-  let ava = user.displayAvatarURL
-  let embed = {
+    let ava = user.displayAvatarURL
+    let embed = {
       color:0x2c3e50,
-      description:""+user.username+"[link]("+ava+")",
+      description:""+user.username+" [link]("+ava+")",
       image:{url:ava}
-  }
-  message.delete();
-  message.channel.send("", {embed});
+    }
+    message.delete();
+    message.channel.send("", {embed});
     }
     let args = message.content.slice(prefix.length).trim().split(' ');
     let command = args.shift().toLowerCase();
@@ -150,7 +150,7 @@ Client.on('message', (message)=>{
     });
     let image = hug[r];
     let embed = new Discord.RichEmbed()
-    .setDescription('**' + message.author + '** đã ôm **' + message.mentions.users.first() + '** :heart:\n')
+    .setDescription('**' + message.author + '** đang ôm **' + message.mentions.users.first() + '** :heart:\n')
     .setImage(image)
     .setColor('RANDOM')
     message.delete();
@@ -253,7 +253,7 @@ Client.on('message', (message)=>{
         });
         let image = gay[r];
         let embed = new Discord.RichEmbed()
-        .setDescription('** Adu thanh niên' + message.author + '** gáy to vãi lizz xD \n')
+        .setDescription(' Adu thanh niên ' + message.author + ' gáy to vãi lizz xD \n')
         .setImage(image)
         .setColor('RANDOM')
         message.delete();
