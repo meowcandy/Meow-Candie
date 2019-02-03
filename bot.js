@@ -63,9 +63,9 @@ Client.on('message', (message)=>{
         let args = message.content.slice(prefix.length).trim().split(' ');
         let command1 = args.shift().toLowerCase();
         if(!args[0]) return;
-  if(args[0] === 'game') return message.reply('Chơi gì bh?');
+  if(args[0] === 'game') return message.channel.send('Chơi gì bh?');
   setGame = args.join(" ");
-  message.reply(`Đang quẩy \`${args}\`.`);
+  message.channel.send(`Đang quẩy \`${args}\`.`);
   Client.user.setGame(`${setGame}`);
     };
 
