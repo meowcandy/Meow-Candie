@@ -2,10 +2,10 @@ const Discord = require("discord.js");
 const Client = new Discord.Client();
 const prefix = "^";
 const hug = ["https://s-media-cache-ak0.pinimg.com/originals/49/a2/1e/49a21e182fcdfb3e96cc9d9421f8ee3f.gif", "https://media.giphy.com/media/xJlOdEYy0r7ZS/giphy.gif","https://myanimelist.cdn-dena.com/s/common/uploaded_files/1461071296-7451c05f5aae134e2cceb276b085a871.gif", "http://i0.kym-cdn.com/photos/images/original/000/931/030/394.gif", "https://media.tenor.co/images/1171c186f9130d1efa4a186ad4371e8c/tenor.gif", "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0413/epic-hugs-friends-pikachu.gif", "https://cdn.weeb.sh/images/Hyv6uOQPZ.gif", "https://cdn.weeb.sh/images/r1bAksn0W.gif", "https://cdn.weeb.sh/images/rJ_slRYFZ.gif", "https://cdn.weeb.sh/images/BkHA_O7v-.gif", "https://cdn.weeb.sh/images/r1kC_dQPW.gif", "https://cdn.weeb.sh/images/r1R3_d7v-.gif", "https://cdn.weeb.sh/images/Sk2gmRZZG.gif", "https://cdn.weeb.sh/images/BysjuO7D-.gif", 
-"https://cdn.weeb.sh/images/BJx2l0ttW.gif","https://cdn.weeb.sh/images/Sy65_OQvZ.gif", "https://cdn.weeb.sh/images/Sk80wyhqz.gif", "https://cdn.weeb.sh/images/Sk-xxs3C-.gif", "https://cdn.weeb.sh/images/S1OAduQwZ.gif", "https://cdn.weeb.sh/images/S18oOuQw-.gif", "https://cdn.weeb.sh/images/ryg2dd7wW.gif", "https://cdn.weeb.sh/images/SknauOQwb.gif", "https://cdn.weeb.sh/images/ryPix0Ft-.gif", "https://cdn.weeb.sh/images/B11CDkhqM.gif", "https://cdn.weeb.sh/images/Sk80wyhqz.gif", "https://cdn.weeb.sh/images/BkZngAYtb.gif", "https://cdn.weeb.sh/images/BkkgL8mDW.gif", ""]
+"https://cdn.weeb.sh/images/BJx2l0ttW.gif","https://cdn.weeb.sh/images/Sy65_OQvZ.gif", "https://cdn.weeb.sh/images/Sk80wyhqz.gif", "https://cdn.weeb.sh/images/Sk-xxs3C-.gif", "https://cdn.weeb.sh/images/S1OAduQwZ.gif", "https://cdn.weeb.sh/images/S18oOuQw-.gif", "https://cdn.weeb.sh/images/ryg2dd7wW.gif", "https://cdn.weeb.sh/images/SknauOQwb.gif", "https://cdn.weeb.sh/images/ryPix0Ft-.gif", "https://cdn.weeb.sh/images/B11CDkhqM.gif", "https://cdn.weeb.sh/images/Sk80wyhqz.gif", "https://cdn.weeb.sh/images/BkZngAYtb.gif", "https://cdn.weeb.sh/images/BkkgL8mDW.gif", "https://cdn.weeb.sh/images/Hkknfs2Ab.gif"]
 const pat = ["https://cdn.weeb.sh/images/ByDVw9uO-.png", "https://cdn.weeb.sh/images/ryXj1JKDb.gif", "https://cdn.weeb.sh/images/ByZwv5udZ.gif", "https://cdn.weeb.sh/images/BkaRWA4CZ.gif", "https://cdn.weeb.sh/images/Sk2f7J39G.gif", "https://cdn.weeb.sh/images/ByZ7wqOu-.png", "https://cdn.weeb.sh/images/B1SOzCV0W.gif", "https://cdn.weeb.sh/images/r1Y5L6NCZ.gif", "https://cdn.weeb.sh/images/rJavp1KVM.gif", "https://cdn.weeb.sh/images/HyWlxJFvb.gif", "https://cdn.weeb.sh/images/ByOc1ktv-.gif", "https://cdn.weeb.sh/images/B1TQcTNCZ.gif", "https://cdn.weeb.sh/images/H1MBvc_u-.gif", "https://cdn.weeb.sh/images/rkBZkRttW.gif", "https://cdn.weeb.sh/images/HJRIlihCZ.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180401821515786/29.gif"]
-const lick = ["https://cdn.weeb.sh/images/ryGpGsnAZ.gif", "https://cdn.weeb.sh/images/H1EJxR_vZ.gif", "https://cdn.weeb.sh/images/H1zlgRuvZ.gif", "https://cdn.weeb.sh/images/rktygCOD-.gif", "https://cdn.weeb.sh/images/rJ6hrQr6-.gif", "https://cdn.weeb.sh/images/H13HS7S6-.gif", "https://cdn.weeb.sh/images/Sk15iVlOf.gif", "https://cdn.weeb.sh/images/rykRHmB6W.gif", "https://cdn.weeb.sh/images/BkvTBQHaZ.gif", "https://cdn.weeb.sh/images/Bkxge0uPW.gif", "https://cdn.discordapp.com/attachments/537169976637784064/539977703223459861/liem.gif"]
-const bad = ["https://media.giphy.com/media/ryxGBGURsirNC/giphy.gif", "https://cdn.weeb.sh/images/H1eoWIDdb.gif", "https://cdn.weeb.sh/images/Bk_oZUP_-.gif", "https://cdn.weeb.sh/images/HkZ6v0FOb.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", "https://cdn.weeb.sh/images/ByIcZUPuZ.gif", "https://cdn.weeb.sh/images/BJsi-8vd-.gif", "https://cdn.weeb.sh/images/S1yhZ8vuW.gif", "https://cdn.weeb.sh/images/H1n57yYP-.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", "https://cdn.weeb.sh/images/H1n57yYP-.gif", ""]
+const lick = ["https://cdn.weeb.sh/images/ryGpGsnAZ.gif", "https://cdn.weeb.sh/images/H1EJxR_vZ.gif", "https://cdn.weeb.sh/images/H1zlgRuvZ.gif", "https://cdn.weeb.sh/images/rktygCOD-.gif", "https://cdn.weeb.sh/images/rJ6hrQr6-.gif", "https://cdn.weeb.sh/images/H13HS7S6-.gif", "https://cdn.weeb.sh/images/Sk15iVlOf.gif", "https://cdn.weeb.sh/images/rykRHmB6W.gif", "https://cdn.weeb.sh/images/BkvTBQHaZ.gif", "https://cdn.weeb.sh/images/Bkxge0uPW.gif", "https://cdn.discordapp.com/attachments/537169976637784064/539977703223459861/liem.gif", "https://cdn.weeb.sh/images/Hkknfs2Ab.gif"]
+const bad = ["https://media.giphy.com/media/ryxGBGURsirNC/giphy.gif", "https://cdn.weeb.sh/images/H1eoWIDdb.gif", "https://cdn.weeb.sh/images/Bk_oZUP_-.gif", "https://cdn.weeb.sh/images/HkZ6v0FOb.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", "https://cdn.weeb.sh/images/ByIcZUPuZ.gif", "https://cdn.weeb.sh/images/BJsi-8vd-.gif", "https://cdn.weeb.sh/images/S1yhZ8vuW.gif", "https://cdn.weeb.sh/images/H1n57yYP-.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", "https://cdn.weeb.sh/images/H1n57yYP-.gif", "https://cdn.weeb.sh/images/By2iXyFw-.gif"]
 const tat = ["https://cdn.weeb.sh/images/HkK2mkYPZ.gif", "https://cdn.weeb.sh/images/Sk0RmyYvb.gif", "https://cdn.weeb.sh/images/SkdyfWCSf.gif", "https://cdn.weeb.sh/images/B1-nQyFDb.gif", "https://cdn.weeb.sh/images/rJ4141YDZ.gif", "https://cdn.weeb.sh/images/Hk6JVkFPb.gif", "https://cdn.weeb.sh/images/r1PXzRYtZ.gif", "https://cdn.weeb.sh/images/ByHUMRNR-.gif", "https://cdn.weeb.sh/images/rJrnXJYPb.gif", "https://cdn.weeb.sh/images/Hy09QJFDZ.gif", "https://cdn.weeb.sh/images/rJvR71KPb.gif", "https://cdn.weeb.sh/images/Bkj-oaV0Z.gif", "https://cdn.weeb.sh/images/BJ8o71tD-.gif", "https://cdn.weeb.sh/images/rJgTQ1tvb.gif", "https://cdn.weeb.sh/images/BJLCX1Kw-.gif", 
 "https://cdn.weeb.sh/images/ry2tWxcyf.gif", "https://cdn.weeb.sh/images/SkSCyl5yz.gif", "https://cdn.weeb.sh/images/HkJ6-e91z.gif", "https://cdn.weeb.sh/images/rkpAXa5bG.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180374663397380/28.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180341297709066/27.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180319801901066/26.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180305423826964/25.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180290714402816/24.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180175400534034/20.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180153850331139/19.gif"]
 const kiss = ["https://cdn.weeb.sh/images/HJmunTOw-.gif", "https://cdn.weeb.sh/images/BJMX2TuPb.gif", "https://cdn.weeb.sh/images/Byh57gqkz.gif", "https://cdn.weeb.sh/images/S1E1npuvb.gif", "https://cdn.weeb.sh/images/rJ6PWohA-.gif", "https://cdn.weeb.sh/images/HJYghpOP-.gif", "https://cdn.weeb.sh/images/Sksk4l51z.gif", "https://cdn.weeb.sh/images/SyY0j6Ov-.gif", "https://cdn.weeb.sh/images/S1qZksSXG.gif", "https://cdn.weeb.sh/images/Bkk_hpdv-.gif", ""]
@@ -13,7 +13,9 @@ const triggered = ["https://cdn.discordapp.com/attachments/540655675622293505/54
 const gay = ["https://cdn.discordapp.com/attachments/540655675622293505/540667240123596800/Gay.gif"]
 const poke = ["https://cdn.weeb.sh/images/H1x2HxyYD-.gif", "https://cdn.weeb.sh/images/HkxwlkKPb.gif", "https://cdn.weeb.sh/images/rJ0hlsnR-.gif", "https://cdn.weeb.sh/images/B14SJlTQG.gif", "https://cdn.weeb.sh/images/Hk2HekKD-.gif", "https://cdn.weeb.sh/images/SyQzRaFFb.gif", "https://cdn.weeb.sh/images/rkaUe1YPb.gif", "https://cdn.weeb.sh/images/SyJzRTKFW.gif", "https://cdn.weeb.sh/images/rkeaUeJKD-.gif", "https://cdn.weeb.sh/images/SydLxJFwW.gif", "https://cdn.weeb.sh/images/H1fMRpYtb.gif", "https://cdn.weeb.sh/images/rktSlkKvb.gif", "https://cdn.weeb.sh/images/r1v6xoh0Z.gif", "https://cdn.weeb.sh/images/rkB8eJYPZ.gif", "https://cdn.weeb.sh/images/B1oSgytwW.gif", "https://cdn.weeb.sh/images/rJzUe1FwZ.gif", "https://cdn.weeb.sh/images/HJZpLxkKDb.gif", "https://cdn.weeb.sh/images/HkjjLb0rM.gif", "https://cdn.weeb.sh/images/Sk_rl1Kw-.gif"]
 const bite = ["https://cdn.discordapp.com/attachments/540655675622293505/542179268118052869/01.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542179284312129537/02.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542179303958249492/03.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542179319892672542/04.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542179881820356618/05.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542179888249962497/05.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542179923012616202/06.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542179934559273001/07.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542179956499677184/08.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542179981862764554/09.jpg", 
-"https://cdn.discordapp.com/attachments/540655675622293505/542179999625773076/10.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180010383900673/11.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542180028520202260/12.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180044148310026/13.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542180066994552832/14.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180078197538826/15.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542180111533867030/17.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542180133533122570/18.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180200079818770/21.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180213367242782/22.gif"]
+"https://cdn.discordapp.com/attachments/540655675622293505/542179999625773076/10.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180010383900673/11.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542180028520202260/12.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180044148310026/13.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542180066994552832/14.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180078197538826/15.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542180111533867030/17.jpg", "https://cdn.discordapp.com/attachments/540655675622293505/542180133533122570/18.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180200079818770/21.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180213367242782/22.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542577138037948456/1.png"]
+const deotin = ["https://cdn.discordapp.com/attachments/540655675622293505/542541542858948608/deotin.gif"]
+const cs = ["https://cdn.discordapp.com/attachments/540655675622293505/542541614023704606/tomcanhsat.gif"]
 const faces = ['(∩ ͠°ل͜ °)⊃━☆','☞ ﾟ ͜ʖ ﾟ☞','ᖗ ◉ ᨓ ◉ ᖘ','ᕦ(ʘᴥʘ)ᕥ','(づ◉ ͜ʖ◉)づ','(づ>﹏<)づ','(☉ ͜ʖ☉)','(ง ò ʖ̯ ó )ง','ʕ ◕ ͜ʖ ◕ ʔ','ᕙ( ☉ Ꮂ ☉ )ᕗ','( ͡° ͜ʖ ͡° )','༼ つ ◕_◕ ༽つ','ಠ_ಠ','(ಥ﹏ಥ)','┬─┬ノ( º _ ºノ)','(▰˘◡˘▰)','╚(ಠ_ಠ)=┐','( ಠ ͜ʖರೃ)','┬┴┬┴┤ ͜ʖ ͡°) ├┬┴┬┴','¯\_(ツ)_/¯','( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)','(ง ﾟ ͜つ ﾟ)ง','( ͡°O ͜ʖ ͡°O)','ヽ༼ຈل͜ຈ༽ﾉ','(͡◔ ͜ʖ ͡◔)','( ͡ ͜ ʖ ͡ )','( ͡°Ĺ̯ ͡° )','( ͡~ ͜ʖ ͡~)','( ͜。 ͡ʖ ͜。)','( ° ͜ʖ͡°)╭∩╮','( ͡~ ͜ʖ ͡°)','ᕕ( ͡° ͜ʖ ͡°)ᕗ','( ͡ _ ͡°)ﾉ⚲ ♫','(╯ຈل͜ຈ) ╯︵ ┻━┻','( ͡° ͜ʖ ͡°)=ε✄','✺◟( ͡° ͜ʖ ͡°)◞✺','(╯ ͝° ͜ʖ͡°)╯︵ ┻━┻','┬━┬ノ(▀̿̿Ĺ̯̿̿▀̿ ̿ノ)','━╤デ╦︻(▀̿̿Ĺ̯̿̿▀̿ ̿)','ᕙ(░ಥ╭͜ʖ╮ಥ░)━☆ﾟ.*･｡ﾟ','（╯°□°）╯︵ ( ͜。 ͡ʖ ͜。)','(∩ ͡ ° ʖ ͡ °) ⊃-(===>','︵‿︵(´ ͡༎ຶ ͜ʖ ͡༎ຶ `)︵‿︵','ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ','̿̿ ̿̿ ̿̿ ̿\'̿\'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿','̿\'̿\'\̵͇̿̿\з=( ͠° ͟ʖ ͡°)=ε/̵͇̿̿/\'̿̿ ̿ ̿ ̿ ̿ ̿'];
 const rn = require('random-number')
 const moment = require('moment');
@@ -306,6 +308,55 @@ Client.on('message', (message)=>{
     message.delete();
     message.channel.send(embed)
     }
+    if (message.content.startsWith(prefix + "deltin")) {
+        let r = rn({
+            min: 0,
+            max: deotin.length - 1,
+            integer: true
+        });
+        let image = deotin[r];
+        let embed = new Discord.RichEmbed()
+        .setDescription(message.author + 'said: **HÁ HÁ CÓ CL BOMAY TIN NHÁ** =)) \n')
+        .setImage(image)
+        .setColor('RANDOM')
+        message.delete();
+        message.channel.send(embed)
+    }
+    if (message.content.startsWith(prefix + "police")) {
+        let r = rn({
+            min: 0,
+            max: cs.length - 1,
+            integer: true
+        });
+        let image = cs[r];
+        let embed = new Discord.RichEmbed()
+        .setDescription('**' + message.author + '** đang gọi cảnh sát \n')
+        .setImage(image)
+        .setColor('RANDOM')
+        message.delete();
+        message.channel.send(embed)
+    }
+    if (message.content.startsWith(prefix + 'xoa')) {
+        let cont = message.content.slice(prefix.length).split(" ");
+        let args = cont.slice(1);
+        async function purge() {
+            message.delete();
+            if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+                message.channel.send('Oof, giáo sư ko có quyền xóa tin nhắn rồi :v');
+                return;
+            }
+            if (isNaN(args[0])) {
+                message.channel.send('Ồ nô, mình ko biết phải xóa bao nhiêu tn cả [ví dụ: ^xoa 5 (bao gồm cả câu lệnh và các tin muốn xóa) ]');
+                return;
+            }
+            const fetched = await message.channel.fetchMessages({limit: args[0]});
+            console.log(fetched.size + ' đang xóa...');
+            message.channel.bulkDelete(fetched)
+            message.channel.send(fetched.size + ' dòng chat đã đc xóa...').then(message => message.delete(7000));
+        }
+        purge();
+    }
+
 });
 
 Client.login(process.env.BOT_TOKEN);
