@@ -293,7 +293,11 @@ Client.on('message', (message)=>{
     message.delete();
     message.channel.send(embed)
     }
-    if (message.content.startsWith(prefix + "dop")) {
+    if (message.content.startsWith(prefix + "bite")) {
+        if (!message.member.roles.find("name", "Sưi 's role")) {
+            message.channel.send('Oof, lệnh này chỉ dành cho Swi, giáo sư ko dùng đc rồi :3')
+            return
+        }
         if (!message.mentions.users.first()) return message.channel.send("Cắn ai zị Swi?");
     let r = rn({
         min: 0,
