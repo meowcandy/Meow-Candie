@@ -372,7 +372,7 @@ Client.on('message', (message)=>{
         .setImage(image)
         .setColor('RANDOM')
         message.delete();
-        message.channel.send(embed).then(message => message.delete(10000));
+        message.channel.send(embed).then(message => message.delete(5000));
     }
 });
 
