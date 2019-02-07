@@ -361,6 +361,10 @@ Client.on('message', (message)=>{
         purge();
     }
     if(message.content.startsWith(prefix + "kkswi")) {
+        if (!message.member.roles.find("name", "Sưi 's role")) {
+            message.channel.send('Oof, giáo sư ko dùng đc lệnh này rồi :3')
+            return
+        }
         let r = rn({
             min: 0,
             max: khoanhkhac.length - 1,
@@ -372,7 +376,7 @@ Client.on('message', (message)=>{
         .setImage(image)
         .setColor('RANDOM')
         message.delete();
-        message.channel.send(embed).then(message => message.delete(5000));
+        message.channel.send(embed).then(message => message.delete(10000));
     }
 });
 
