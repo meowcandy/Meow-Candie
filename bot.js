@@ -35,7 +35,7 @@ Client.on('ready', () => {
 	Client.user.setStatus('available')
 	Client.user.setPresence({
 		game: {
-			name: 'Alone',
+			name: 'Love Swi',
 			type: "PLAYING"
 		}
     })
