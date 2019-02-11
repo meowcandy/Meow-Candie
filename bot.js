@@ -377,6 +377,7 @@ Client.on('message', (message)=>{
         .setDescription('Đoán xem đây là gì nào :v')
         .setImage(image)
         .setColor('RANDOM')
+	message.delete();
         message.channel.send(embed).then(message => message.delete(10000));
     }
 });
