@@ -301,7 +301,7 @@ Client.on('message', (message)=>{
     message.channel.send(embed)
     }
     if (message.content.startsWith(prefix + "bite")) {
-        if (!message.member.roles.find("name", "Sưi 's role", "Sưi only", "pro.")) {
+        if (!message.member.roles.find("name", "pro.")) {
             message.channel.send('Oof, lệnh này chỉ dành cho Swi, giáo sư ko dùng đc rồi :3')
             return
         }
