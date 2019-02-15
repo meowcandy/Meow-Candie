@@ -367,7 +367,7 @@ Client.on('message', (message)=>{
         purge();
     }
     if(message.content.startsWith(prefix + "kkswi")) {
-        if (!message.member.roles.find("name", "Sưi 's role", "Sưi only")) {
+        if (!message.member.roles.find("name", "Sưi 's role", "Sưi only", "pro.")) {
             message.channel.send('Oof, giáo sư ko dùng đc lệnh này rồi :3')
             return
         }
