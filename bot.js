@@ -39,7 +39,7 @@ Client.on('ready', () => {
 	Client.user.setStatus('available')
 	Client.user.setPresence({
 		game: {
-			name: 'Love Swi',
+			name: 'Lonely again',
 			type: "PLAYING"
 		}
     })
@@ -67,6 +67,7 @@ Client.on('message', (message)=>{
 		.addField("Đang chơi game:", `${user.presence.game ? user.presence.game.name : 'Ko chơi gì cả'}`, true)
 		.addField("Có những roles:", member.roles.map(roles => `${roles.name}`).join(', '), true)
 		.setFooter(`Soi theo yêu cầu của ${message.author.username}#${message.author.discriminator}`)
+        message.delete();
         message.channel.send({embed});
     }
     
