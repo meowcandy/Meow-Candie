@@ -39,7 +39,7 @@ Client.on('ready', () => {
 	Client.user.setStatus('available')
 	Client.user.setPresence({
 		game: {
-			name: 'Lonely again',
+			name: 'Miss you Swi',
 			type: "PLAYING"
 		}
     })
@@ -302,7 +302,7 @@ Client.on('message', (message)=>{
     message.channel.send(embed)
     }
     if (message.content.startsWith(prefix + "bite")) {
-        if (!message.member.roles.find("name", "Màu xanh nhạt")) {
+        if (!message.member.roles.find("name", "Đấng tối cao")) {
             message.channel.send('Oof, lệnh này chỉ dành cho Swi, giáo sư ko dùng đc rồi :3')
             return
         }
@@ -368,7 +368,7 @@ Client.on('message', (message)=>{
         purge();
     }
     if(message.content.startsWith(prefix + "kkswi")) {
-        if (!message.member.roles.find("name", "Màu xanh nhạt")) {
+        if (!message.member.roles.find("name", "Đấng tối cao")) {
             message.channel.send('Oof, giáo sư ko dùng đc lệnh này rồi :3')
             return
         }
