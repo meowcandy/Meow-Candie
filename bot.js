@@ -24,7 +24,6 @@ const capoo = ["https://media.giphy.com/media/7JsCieSgDMVV0SU8qR/giphy.gif","htt
 "https://media.giphy.com/media/7JyLMbi1Ixm0d38DDL/giphy.gif", "https://media.giphy.com/media/2fI6wlwSNqwPoVALKx/giphy.gif", "https://media.giphy.com/media/vvlXRQk0HXu9TgG83y/giphy.gif", "https://media.giphy.com/media/1Ye9W562QVNAsUXfJv/giphy.gif", "https://media.giphy.com/media/2difRB7j6iOMKAxVjn/giphy.gif", "https://media.giphy.com/media/1AePOuERh4yHsHJUtR/giphy.gif", "https://media.giphy.com/media/35DluCV3Bp27HJ7BNU/giphy.gif", "https://media.giphy.com/media/2xPJgxGGREj4UU5shz/giphy.gif", "https://media.giphy.com/media/xWZ5d1qCLbntgcxwi2/giphy.gif", "https://media.giphy.com/media/24mLGmGz8RJUPcljP1/giphy.gif", "https://media.giphy.com/media/236WgL8hVG3d8exOIH/giphy.gif", "https://media.giphy.com/media/vwQkrVsHvASw2rvCyt/giphy.gif", "https://media.giphy.com/media/1BfPro40WmqCN4Wlfs/giphy.gif", "https://media.giphy.com/media/ir3tVQA3RxGzAMNHnq/giphy.gif", "https://media.giphy.com/media/pHZBKQ8sZYwx1Fn2QK/giphy.gif", 
 "https://media.giphy.com/media/cC9UggEZmaCtaNHezq/giphy.gif", "https://media.giphy.com/media/2zdowXFwWHAtdeQZ6C/giphy.gif", "https://media.giphy.com/media/OqDujFd2wAAfJU74xz/giphy.gif", "https://media.giphy.com/media/1rK9I9DR5rY3pKQyfA/giphy.gif", "https://media.giphy.com/media/26kLTUJFaneYMgFJG8/giphy.gif", "https://media.giphy.com/media/oOGi0Fzq6eraw0hkJk/giphy.gif", "https://media.giphy.com/media/23gh5YFrIavyiyFhwK/giphy.gif", "https://media.giphy.com/media/jxaJRn8oMqiajgyDrY/giphy.gif", "https://media.giphy.com/media/2bW31kXZ3b9DxinVM2/giphy.gif", "https://media.giphy.com/media/1lwSkX91KGuO8TmA8A/giphy.gif", "https://media.giphy.com/media/6bbYmIyfiUqoDgS9x9/giphy.gif", "https://media.giphy.com/media/5C2gekdZ3JoIEvaDnY/giphy.gif", "https://media.giphy.com/media/1gF4XzXGQZWncTk8Gm/giphy.gif", "https://media.giphy.com/media/5yWT6kqDVF3FGo70j0/giphy.gif", "https://media.giphy.com/media/8cSTuV13lapbaXOdOZ/giphy.gif"]
 const faces = ['(∩ ͠°ل͜ °)⊃━☆','☞ ﾟ ͜ʖ ﾟ☞','ᖗ ◉ ᨓ ◉ ᖘ','ᕦ(ʘᴥʘ)ᕥ','(づ◉ ͜ʖ◉)づ','(づ>﹏<)づ','(☉ ͜ʖ☉)','(ง ò ʖ̯ ó )ง','ʕ ◕ ͜ʖ ◕ ʔ','ᕙ( ☉ Ꮂ ☉ )ᕗ','( ͡° ͜ʖ ͡° )','༼ つ ◕_◕ ༽つ','ಠ_ಠ','(ಥ﹏ಥ)','┬─┬ノ( º _ ºノ)','(▰˘◡˘▰)','╚(ಠ_ಠ)=┐','( ಠ ͜ʖರೃ)','┬┴┬┴┤ ͜ʖ ͡°) ├┬┴┬┴','¯\_(ツ)_/¯','( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)','(ง ﾟ ͜つ ﾟ)ง','( ͡°O ͜ʖ ͡°O)','ヽ༼ຈل͜ຈ༽ﾉ','(͡◔ ͜ʖ ͡◔)','( ͡ ͜ ʖ ͡ )','( ͡°Ĺ̯ ͡° )','( ͡~ ͜ʖ ͡~)','( ͜。 ͡ʖ ͜。)','( ° ͜ʖ͡°)╭∩╮','( ͡~ ͜ʖ ͡°)','ᕕ( ͡° ͜ʖ ͡°)ᕗ','( ͡ _ ͡°)ﾉ⚲ ♫','(╯ຈل͜ຈ) ╯︵ ┻━┻','( ͡° ͜ʖ ͡°)=ε✄','✺◟( ͡° ͜ʖ ͡°)◞✺','(╯ ͝° ͜ʖ͡°)╯︵ ┻━┻','┬━┬ノ(▀̿̿Ĺ̯̿̿▀̿ ̿ノ)','━╤デ╦︻(▀̿̿Ĺ̯̿̿▀̿ ̿)','ᕙ(░ಥ╭͜ʖ╮ಥ░)━☆ﾟ.*･｡ﾟ','（╯°□°）╯︵ ( ͜。 ͡ʖ ͜。)','(∩ ͡ ° ʖ ͡ °) ⊃-(===>','︵‿︵(´ ͡༎ຶ ͜ʖ ͡༎ຶ `)︵‿︵','ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ','̿̿ ̿̿ ̿̿ ̿\'̿\'\̵͇̿̿\з= ( ▀ ͜͞ʖ▀) =ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿','̿\'̿\'\̵͇̿̿\з=( ͠° ͟ʖ ͡°)=ε/̵͇̿̿/\'̿̿ ̿ ̿ ̿ ̿ ̿'];
-const rade = ["https://cdn.discordapp.com/attachments/413303388030107661/551024909632012288/unknown.png"]
 const rn = require('random-number')
 const moment = require('moment');
 
@@ -395,20 +394,6 @@ Client.on('message', (message)=>{
         let image = capoo[r];
         let embed = new Discord.RichEmbed()
         .setDescription('**Capoo**')
-        .setImage(image)
-        .setColor('RANDOM')
-	    message.delete();
-        message.channel.send(embed)
-    }
-    if(message.content.startsWith(prefix + "rade")) {
-        let r = rn({
-            min: 0,
-            max: rade.length - 1,
-            integer: true
-        });
-        let image = rade[r];
-        let embed = new Discord.RichEmbed()
-        .setDescription('**Ra đê nào anh em ơiiii**')
         .setImage(image)
         .setColor('RANDOM')
 	    message.delete();
