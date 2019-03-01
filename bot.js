@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const Client = new Discord.Client();
-const prefix = "^";
+const prefix = "'";
 const hug = ["https://s-media-cache-ak0.pinimg.com/originals/49/a2/1e/49a21e182fcdfb3e96cc9d9421f8ee3f.gif", "https://media.giphy.com/media/xJlOdEYy0r7ZS/giphy.gif","https://myanimelist.cdn-dena.com/s/common/uploaded_files/1461071296-7451c05f5aae134e2cceb276b085a871.gif", "http://i0.kym-cdn.com/photos/images/original/000/931/030/394.gif", "https://media.tenor.co/images/1171c186f9130d1efa4a186ad4371e8c/tenor.gif", "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0413/epic-hugs-friends-pikachu.gif", "https://cdn.weeb.sh/images/Hyv6uOQPZ.gif", "https://cdn.weeb.sh/images/r1bAksn0W.gif", "https://cdn.weeb.sh/images/rJ_slRYFZ.gif", "https://cdn.weeb.sh/images/BkHA_O7v-.gif", "https://cdn.weeb.sh/images/r1kC_dQPW.gif", "https://cdn.weeb.sh/images/r1R3_d7v-.gif", "https://cdn.weeb.sh/images/Sk2gmRZZG.gif", "https://cdn.weeb.sh/images/BysjuO7D-.gif", 
 "https://cdn.weeb.sh/images/BJx2l0ttW.gif","https://cdn.weeb.sh/images/Sy65_OQvZ.gif", "https://cdn.weeb.sh/images/Sk80wyhqz.gif", "https://cdn.weeb.sh/images/Sk-xxs3C-.gif", "https://cdn.weeb.sh/images/S1OAduQwZ.gif", "https://cdn.weeb.sh/images/S18oOuQw-.gif", "https://cdn.weeb.sh/images/ryg2dd7wW.gif", "https://cdn.weeb.sh/images/SknauOQwb.gif", "https://cdn.weeb.sh/images/ryPix0Ft-.gif", "https://cdn.weeb.sh/images/B11CDkhqM.gif", "https://cdn.weeb.sh/images/Sk80wyhqz.gif", "https://cdn.weeb.sh/images/BkZngAYtb.gif", "https://cdn.weeb.sh/images/BkkgL8mDW.gif", "https://cdn.weeb.sh/images/Hkknfs2Ab.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542855823127478282/1.gif", "https://cdn.weeb.sh/images/rkV6r56Oz.gif"]
 const pat = ["https://cdn.weeb.sh/images/ByDVw9uO-.png", "https://cdn.weeb.sh/images/ryXj1JKDb.gif", "https://cdn.weeb.sh/images/ByZwv5udZ.gif", "https://cdn.weeb.sh/images/BkaRWA4CZ.gif", "https://cdn.weeb.sh/images/Sk2f7J39G.gif", "https://cdn.weeb.sh/images/ByZ7wqOu-.png", "https://cdn.weeb.sh/images/B1SOzCV0W.gif", "https://cdn.weeb.sh/images/r1Y5L6NCZ.gif", "https://cdn.weeb.sh/images/rJavp1KVM.gif", "https://cdn.weeb.sh/images/HyWlxJFvb.gif", "https://cdn.weeb.sh/images/ByOc1ktv-.gif", "https://cdn.weeb.sh/images/B1TQcTNCZ.gif", "https://cdn.weeb.sh/images/H1MBvc_u-.gif", "https://cdn.weeb.sh/images/rkBZkRttW.gif", "https://cdn.weeb.sh/images/HJRIlihCZ.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180401821515786/29.gif"]
@@ -39,7 +39,7 @@ Client.on('ready', () => {
 	Client.user.setStatus('available')
 	Client.user.setPresence({
 		game: {
-			name: 'Miss you Swi',
+			name: "Finding something doesn't exist",
 			type: "PLAYING"
 		}
     })
@@ -302,8 +302,8 @@ Client.on('message', (message)=>{
     message.channel.send(embed)
     }
     if (message.content.startsWith(prefix + "bite")) {
-        if (!message.member.roles.find("name", "Đấng tối cao")) {
-            message.channel.send('Oof, lệnh này chỉ dành cho Swi, giáo sư ko dùng đc rồi :3')
+        if (!message.member.roles.find("name", "Đấng")) {
+            message.channel.send('Oof, giáo sư ko dùng đc lệnh này :3')
             return
         }
         if (!message.mentions.users.first()) return message.channel.send("Cắn ai zị Swi?");
@@ -367,9 +367,9 @@ Client.on('message', (message)=>{
         }
         purge();
     }
-    if(message.content.startsWith(prefix + "kkswi")) {
-        if (!message.member.roles.find("name", "Đấng tối cao")) {
-            message.channel.send('Oof, giáo sư ko dùng đc lệnh này rồi :3')
+    if(message.content.startsWith(prefix + "mem")) {
+        if (!message.member.roles.find("name", "Đấng")) {
+            message.channel.send('Oof, giáo sư ko dùng đc lệnh này :3')
             return
         }
         let r = rn({
@@ -379,7 +379,7 @@ Client.on('message', (message)=>{
         });
         let image = khoanhkhac[r];
         let embed = new Discord.RichEmbed()
-        .setDescription('Đoán xem đây là gì nào :v')
+        .setDescription(':<')
         .setImage(image)
         .setColor('RANDOM')
 	    message.delete();
