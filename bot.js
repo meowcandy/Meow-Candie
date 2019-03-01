@@ -413,5 +413,6 @@ Client.on('message', (message)=>{
         .setColor('RANDOM')
 	    message.delete();
         message.channel.send(embed)
+    }   
 });
 Client.login(process.env.BOT_TOKEN);
