@@ -398,6 +398,26 @@ Client.on('message', (message)=>{
         .setColor('RANDOM')
 	    message.delete();
         message.channel.send(embed)
-    }   
+    }
+    if (message.content.startsWith(prefix + 'ban')) {
+        const user = message.mentions.users.first();
+        if (user) {
+          const member = message.guild.member(user);
+          if (member) {
+            member.ban({
+              reason: 'cc',
+            }).then(() => {
+              message.reply(`đã ban ${user.tag}`);
+            }).catch(err => {
+              message.reply('ko ban đc');
+              console.error(err);
+            });
+        } else {
+            message.reply('éo ở trong này');
+        }
+        } else {
+          message.reply('chưa chọn đối tượng');
+        }
+    }
 });
 Client.login(process.env.BOT_TOKEN);
