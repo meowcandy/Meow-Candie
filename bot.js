@@ -306,7 +306,7 @@ Client.on('message', (message)=>{
             message.channel.send('Oof, giáo sư ko dùng đc lệnh này :3')
             return
         }
-        if (!message.mentions.users.first()) return message.channel.send("Cắn ai zị Swi?");
+        if (!message.mentions.users.first()) return message.channel.send("Cắn ai zị?");
     let r = rn({
         min: 0,
         max: bite.length - 1,
