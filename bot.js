@@ -81,6 +81,16 @@ Client.on('message', (message)=>{
     message.channel.send(`Đang quẩy \`${args}\`.`);
     Client.user.setGame(`${setGame}`);
     };
+    if(message.content.startsWith(prefix + "nghe")){
+        let args = message.content.slice(prefix.length).trim().split(' ');
+        let command1 = args.shift().toLowerCase();
+        if(!args[0]) return;
+    if(args[0] === 'game') return message.channel.send('Nghe gì bh?');
+    setGame = args.join(" ");
+    message.delete();
+    message.channel.send(`Đang nghe \`${args}\`.`);
+    Client.user.setActivity(`${setGame}`, { type: 'LISTENING' });
+    };
 
     if(message.content.startsWith(prefix + "lenny")){
         let r = rn({
