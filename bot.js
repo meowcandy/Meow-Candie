@@ -362,10 +362,6 @@ Client.on('message', (message)=>{
         let cont = message.content.slice(prefix.length).split(" ");
         let args = cont.slice(1);
         async function purge() {
-            if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-                message.channel.send('Oof, giáo sư ko có quyền xóa tin nhắn rồi :v');
-                return;
-            }
             if (isNaN(args[0])) {
                 message.channel.send('Ồ nô, mình ko biết phải xóa bao nhiêu tn cả [ví dụ: ^xoa 5 (bao gồm cả câu lệnh và các tin muốn xóa) ]');
                 return;
