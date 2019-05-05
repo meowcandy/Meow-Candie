@@ -36,7 +36,7 @@ Client.on('ready', () => {
 	Client.user.setStatus('available')
 	Client.user.setPresence({
 		game: {
-			name: "Bình yên nơi đâu",
+			name: "Kimi no namae",
 			type: "LISTENING"
 		}
     })
