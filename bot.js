@@ -36,7 +36,7 @@ Client.on('ready', () => {
 	Client.user.setStatus('available')
 	Client.user.setPresence({
 		game: {
-			name: "Azur Lane",
+			name: "Ấuzam Lane",
 			type: "PLAYING"
 		}
     })
