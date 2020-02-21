@@ -405,21 +405,8 @@ Client.on('message', (message)=>{
         }
     }
     if (message.content.startsWith(prefix + 'help')){
-        let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .addField("`om: ôm người đc tag")
-        .addField("`pat: xoa đầu")
-        .addField("`liem: liếm")
-        .addField("`tat: tát")
-        .addField("`hon: kiss")
-        .addField("`tgr: triggerred")
-        .addField("`gaylen: gáy")
-        .addField("`choc: chọc")
-        .addField("`deltin: éo tin")
-        .addField("`cs: gọi cảnh sát")
-        .addField("`capoo: sâu mèo capoo")
-        .addField("`face")
-        message.channel.send({embed});
+        message.channel.send('Kí tự: " ` " + om, pat, liem, tat, hon, tgr, gaylen, choc, deltin, cs, capoo, face, ava, info')
+        message.channel.send(" Ví dụ: `om ( tag ai đó )")
     }
 });
 Client.login(process.env.BOT_TOKEN);
