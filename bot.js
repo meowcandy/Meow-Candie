@@ -89,7 +89,7 @@ Client.on('message', (message)=>{
     Client.user.setActivity(`${setGame}`, { type: 'LISTENING' });
     };
 
-    if(message.content.startsWith(prefix + "lenny")){
+    if(message.content.startsWith(prefix + "face")){
         let r = rn({
             min: 0,
             max: faces.length - 1,
@@ -161,7 +161,7 @@ Client.on('message', (message)=>{
 
 
     }
-    if (message.content.startsWith(prefix + "hug")) {
+    if (message.content.startsWith(prefix + "om")) {
         if (!message.mentions.users.first()) return message.channel.send("Nani ôm không khí hả giáo sư?");
     let r = rn({
         min: 0,
@@ -341,7 +341,7 @@ Client.on('message', (message)=>{
         message.delete();
         message.channel.send(embed)
     }
-    if (message.content.startsWith(prefix + "police")) {
+    if (message.content.startsWith(prefix + "cs")) {
         let r = rn({
             min: 0,
             max: cs.length - 1,
@@ -403,6 +403,22 @@ Client.on('message', (message)=>{
         } else {
           message.reply('chưa chọn đối tượng');
         }
+    }
+    if (message.content.startsWith(prefix + 'help')){
+        let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .addField("`om: ôm người đc tag")
+        .addField("`pat: xoa đầu")
+        .addField("`liem: liếm")
+        .addField("`tat: tát")
+        .addField("`hon: kiss")
+        .addField("`tgr: triggerred")
+        .addField("`gaylen: gáy")
+        .addField("`choc: chọc")
+        .addField("`deltin: éo tin")
+        .addField("`cs: gọi cảnh sát")
+        .addField("`capoo: sâu mèo capoo")
+        .addField("`face")
     }
 });
 Client.login(process.env.BOT_TOKEN);
