@@ -419,6 +419,7 @@ Client.on('message', (message)=>{
         .addField("`cs: gọi cảnh sát")
         .addField("`capoo: sâu mèo capoo")
         .addField("`face")
+        message.channel.send({embed});
     }
 });
 Client.login(process.env.BOT_TOKEN);
