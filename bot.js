@@ -221,10 +221,6 @@ Client.on('message', (message)=>{
     let args = message.content.slice(says.length).trim().split(' ');
     let command = args.shift().toLowerCase();
 	if(message.content.startsWith(says + "say")) {
-		if (!message.member.roles.find("Waifu <3", "Đô đốc")) {
-            message.channel.send('Oof, giáo sư ko dùng đc lệnh này :3')
-            return
-        }
 		let say = args.join(' ');
 		message.delete();
 		message.channel.send(say);
