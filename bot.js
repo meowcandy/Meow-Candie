@@ -229,5 +229,4 @@ Client.on('message', (message)=>{
 		message.delete();
 		if (!message.mentions.users.first()) return message.channel.send(say)
 });
-});
 Client.login(process.env.BOT_TOKEN);
