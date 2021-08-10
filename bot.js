@@ -228,5 +228,6 @@ Client.on('message', (message)=>{
 		let say = args.join(' ');
 		message.delete();
 		if (!message.mentions.users.first()) return message.channel.send(say)
+	}
 });
 Client.login(process.env.BOT_TOKEN);
