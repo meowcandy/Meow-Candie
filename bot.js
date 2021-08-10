@@ -2,14 +2,6 @@ const Discord = require("discord.js");
 const Client = new Discord.Client();
 const prefix = "]";
 const says = "_";
-const hug = ["https://s-media-cache-ak0.pinimg.com/originals/49/a2/1e/49a21e182fcdfb3e96cc9d9421f8ee3f.gif", "https://media.giphy.com/media/xJlOdEYy0r7ZS/giphy.gif","https://myanimelist.cdn-dena.com/s/common/uploaded_files/1461071296-7451c05f5aae134e2cceb276b085a871.gif", "http://i0.kym-cdn.com/photos/images/original/000/931/030/394.gif", "https://media.tenor.co/images/1171c186f9130d1efa4a186ad4371e8c/tenor.gif", "http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0413/epic-hugs-friends-pikachu.gif", "https://cdn.weeb.sh/images/Hyv6uOQPZ.gif", "https://cdn.weeb.sh/images/r1bAksn0W.gif", "https://cdn.weeb.sh/images/rJ_slRYFZ.gif", "https://cdn.weeb.sh/images/BkHA_O7v-.gif", "https://cdn.weeb.sh/images/r1kC_dQPW.gif", "https://cdn.weeb.sh/images/r1R3_d7v-.gif", "https://cdn.weeb.sh/images/Sk2gmRZZG.gif", "https://cdn.weeb.sh/images/BysjuO7D-.gif", 
-"https://cdn.weeb.sh/images/BJx2l0ttW.gif","https://cdn.weeb.sh/images/Sy65_OQvZ.gif", "https://cdn.weeb.sh/images/Sk80wyhqz.gif", "https://cdn.weeb.sh/images/Sk-xxs3C-.gif", "https://cdn.weeb.sh/images/S1OAduQwZ.gif", "https://cdn.weeb.sh/images/S18oOuQw-.gif", "https://cdn.weeb.sh/images/ryg2dd7wW.gif", "https://cdn.weeb.sh/images/SknauOQwb.gif", "https://cdn.weeb.sh/images/ryPix0Ft-.gif", "https://cdn.weeb.sh/images/B11CDkhqM.gif", "https://cdn.weeb.sh/images/Sk80wyhqz.gif", "https://cdn.weeb.sh/images/BkZngAYtb.gif", "https://cdn.weeb.sh/images/BkkgL8mDW.gif", "https://cdn.weeb.sh/images/Hkknfs2Ab.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542855823127478282/1.gif", "https://cdn.weeb.sh/images/rkV6r56Oz.gif"]
-const pat = ["https://cdn.weeb.sh/images/ByDVw9uO-.png", "https://cdn.weeb.sh/images/ryXj1JKDb.gif", "https://cdn.weeb.sh/images/ByZwv5udZ.gif", "https://cdn.weeb.sh/images/BkaRWA4CZ.gif", "https://cdn.weeb.sh/images/Sk2f7J39G.gif", "https://cdn.weeb.sh/images/ByZ7wqOu-.png", "https://cdn.weeb.sh/images/B1SOzCV0W.gif", "https://cdn.weeb.sh/images/r1Y5L6NCZ.gif", "https://cdn.weeb.sh/images/rJavp1KVM.gif", "https://cdn.weeb.sh/images/HyWlxJFvb.gif", "https://cdn.weeb.sh/images/ByOc1ktv-.gif", "https://cdn.weeb.sh/images/B1TQcTNCZ.gif", "https://cdn.weeb.sh/images/H1MBvc_u-.gif", "https://cdn.weeb.sh/images/rkBZkRttW.gif", "https://cdn.weeb.sh/images/HJRIlihCZ.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180401821515786/29.gif"]
-const lick = ["https://cdn.weeb.sh/images/ryGpGsnAZ.gif", "https://cdn.weeb.sh/images/H1EJxR_vZ.gif", "https://cdn.weeb.sh/images/H1zlgRuvZ.gif", "https://cdn.weeb.sh/images/rktygCOD-.gif", "https://cdn.weeb.sh/images/rJ6hrQr6-.gif", "https://cdn.weeb.sh/images/H13HS7S6-.gif", "https://cdn.weeb.sh/images/Sk15iVlOf.gif", "https://cdn.weeb.sh/images/rykRHmB6W.gif", "https://cdn.weeb.sh/images/BkvTBQHaZ.gif", "https://cdn.weeb.sh/images/Bkxge0uPW.gif", "https://cdn.discordapp.com/attachments/537169976637784064/539977703223459861/liem.gif", "https://cdn.weeb.sh/images/Hkknfs2Ab.gif"]
-const bad = ["https://cdn.weeb.sh/images/H16aQJFvb.gif", "https://media.giphy.com/media/ryxGBGURsirNC/giphy.gif", "https://cdn.weeb.sh/images/H1eoWIDdb.gif", "https://cdn.weeb.sh/images/Bk_oZUP_-.gif", "https://cdn.weeb.sh/images/HkZ6v0FOb.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", "https://cdn.weeb.sh/images/ByIcZUPuZ.gif", "https://cdn.weeb.sh/images/BJsi-8vd-.gif", "https://cdn.weeb.sh/images/S1yhZ8vuW.gif", "https://cdn.weeb.sh/images/H1n57yYP-.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", "https://cdn.weeb.sh/images/H1n57yYP-.gif", "https://cdn.weeb.sh/images/By2iXyFw-.gif"]
-const tat = ["https://cdn.weeb.sh/images/rknn7Jtv-.gif","https://cdn.weeb.sh/images/HkK2mkYPZ.gif", "https://cdn.weeb.sh/images/Sk0RmyYvb.gif", "https://cdn.weeb.sh/images/SkdyfWCSf.gif", "https://cdn.weeb.sh/images/B1-nQyFDb.gif", "https://cdn.weeb.sh/images/rJ4141YDZ.gif", "https://cdn.weeb.sh/images/Hk6JVkFPb.gif", "https://cdn.weeb.sh/images/r1PXzRYtZ.gif", "https://cdn.weeb.sh/images/ByHUMRNR-.gif", "https://cdn.weeb.sh/images/rJrnXJYPb.gif", "https://cdn.weeb.sh/images/Hy09QJFDZ.gif", "https://cdn.weeb.sh/images/rJvR71KPb.gif", "https://cdn.weeb.sh/images/Bkj-oaV0Z.gif", "https://cdn.weeb.sh/images/BJ8o71tD-.gif", "https://cdn.weeb.sh/images/rJgTQ1tvb.gif", "https://cdn.weeb.sh/images/BJLCX1Kw-.gif", 
-"https://cdn.weeb.sh/images/ry2tWxcyf.gif", "https://cdn.weeb.sh/images/SkSCyl5yz.gif", "https://cdn.weeb.sh/images/HkJ6-e91z.gif", "https://cdn.weeb.sh/images/rkpAXa5bG.gif", "https://cdn.weeb.sh/images/HkHFyIw_W.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180374663397380/28.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180341297709066/27.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180319801901066/26.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180305423826964/25.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180290714402816/24.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180175400534034/20.gif", "https://cdn.discordapp.com/attachments/540655675622293505/542180153850331139/19.gif"]
-const kiss = ["https://cdn.weeb.sh/images/r1H42advb.gif", "https://cdn.weeb.sh/images/HJmunTOw-.gif", "https://cdn.weeb.sh/images/BJMX2TuPb.gif", "https://cdn.weeb.sh/images/Byh57gqkz.gif", "https://cdn.weeb.sh/images/S1E1npuvb.gif", "https://cdn.weeb.sh/images/rJ6PWohA-.gif", "https://cdn.weeb.sh/images/HJYghpOP-.gif", "https://cdn.weeb.sh/images/Sksk4l51z.gif", "https://cdn.weeb.sh/images/SyY0j6Ov-.gif", "https://cdn.weeb.sh/images/S1qZksSXG.gif", "https://cdn.weeb.sh/images/Bkk_hpdv-.gif", "https://cdn.weeb.sh/images/B1MJ2aODb.gif"]
 const triggered = ["https://cdn.discordapp.com/attachments/540655675622293505/540655752600092713/ryyMcytDZ.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540667240123596800/Gay.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540667711517360168/giphy.gif", "https://media.giphy.com/media/kRgj0fQLxhVoA/giphy.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540669457660641280/giphy_3.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540669680663265320/giphy_4.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540667766986768384/tenor.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540667752038400020/tenor_1.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540670358294888450/tenor_2.gif", "https://cdn.discordapp.com/attachments/540655675622293505/540668313127223317/Liem.jpg"]
 const gay = ["https://cdn.discordapp.com/attachments/540655675622293505/540667240123596800/Gay.gif"]
 const deotin = ["https://cdn.discordapp.com/attachments/540655675622293505/542541542858948608/deotin.gif"]
@@ -108,31 +100,6 @@ Client.on('message', (message)=>{
     message.delete();
     message.channel.send("", {embed});
     }
-    let args = message.content.slice(says.length).trim().split(' ');
-    let command = args.shift().toLowerCase();
-	if(message.content.startsWith(says + "say")) {
-		let say = args.join(' ');
-		message.delete();
-		message.channel.send(say);  
-    }
-    if (!message.guild) return;
-    if (message.content.startsWith(prefix + "vao")){
-        if (message.member.voiceChannel){
-            message.member.voiceChannel.join()
-            .then(voiceConnection => {
-                message.channel.send('Đã chui zo');
-            })
-            .catch(console.log);
-        }else{
-            message.channel.send('Vào voice trc đi giáo sư :v');
-        }
-    }
-
-    if(message.content.startsWith(prefix + "cut")){
-        if(message.guild.voiceConnection)
-        message.guild.voiceConnection.disconnect()
-        message.channel.send('Đã té')
-    }
 
     if (!message.guild) return;
     if (message.content.startsWith(prefix + "kick")){
@@ -151,114 +118,9 @@ Client.on('message', (message)=>{
             }   
         } else {
             message.reply('Chưa chọn đối tượng để ulti!!');
-        } 
+        }
+    }
 
-
-    }
-    if (message.content.startsWith(prefix + "om")) {
-        if (!message.mentions.users.first()) return message.channel.send("Nani ôm không khí hả giáo sư?");
-    let r = rn({
-        min: 0,
-        max: hug.length - 1,
-        integer: true
-    });
-    let image = hug[r];
-    let embed = new Discord.RichEmbed()
-    .setDescription('**' + message.author + '** đang ôm **' + message.mentions.users.first() + '** :heart:\n')
-    .setImage(image)
-    .setColor('RANDOM')
-    message.delete();
-    message.channel.send(embed)
-    }
-    if (message.content.startsWith(prefix + "pat")) {
-        if (!message.mentions.users.first()) return message.channel.send("Xoa gì thế giáo sư");
-    let r = rn({
-        min: 0,
-        max: pat.length - 1,
-        integer: true
-    });
-    let image = pat[r];
-    let embed = new Discord.RichEmbed()
-    .setDescription('**' + message.author + '** xoa đầu **' + message.mentions.users.first() + '** :heart:\n')
-    .setImage(image)
-    .setColor('RANDOM')
-    message.delete();
-    message.channel.send(embed)
-    }
-    if (message.content.startsWith(prefix + "liem")) {
-        if (!message.mentions.users.first()) return message.channel.send("Liếm nani?");
-    let r = rn({
-        min: 0,
-        max: lick.length - 1,
-        integer: true
-    });
-    let image = lick[r];
-    let embed = new Discord.RichEmbed()
-    .setDescription('**' + message.author + '** đã liếm **' + message.mentions.users.first() + '** :heart:\n')
-    .setImage(image)
-    .setColor('RANDOM')
-    message.delete();
-    message.channel.send(embed)
-    }
-    if (message.content.startsWith(prefix + "bad")) {
-        if (!message.mentions.users.first()) return message.channel.send("Giáo sư muốn đập ai?");
-    let r = rn({
-        min: 0,
-        max: bad.length - 1,
-        integer: true
-    });
-    let image = bad[r];
-    let embed = new Discord.RichEmbed()
-    .setDescription('**' + message.author + '** đập **' + message.mentions.users.first() + '** ngu cmn người' + ' =)))) \n')
-    .setImage(image)
-    .setColor('RANDOM')
-    message.delete();
-    message.channel.send(embed)
-    }
-    if (message.content.startsWith(prefix + "tat")) {
-        if (!message.mentions.users.first()) return message.channel.send("Táng vomom đứa nào bh??");
-    let r = rn({
-        min: 0,
-        max: tat.length - 1,
-        integer: true
-    });
-    let image = tat[r];
-    let embed = new Discord.RichEmbed()
-    .setDescription('**' + message.author + '** táng **' + message.mentions.users.first() + '** sml ' + ' =)))) \n')
-    .setImage(image)
-    .setColor('RANDOM')
-    message.delete();
-    message.channel.send(embed)
-    }
-    if (message.content.startsWith(prefix + "hon")) {
-        if (!message.mentions.users.first()) return message.channel.send("Yêu ai nói ra nào :3");
-    let r = rn({
-        min: 0,
-        max: kiss.length - 1,
-        integer: true
-    });
-    let image = kiss[r];
-    let embed = new Discord.RichEmbed()
-    .setDescription('**' + message.author + '** đã hun **' + message.mentions.users.first() + '** :heart:\n')
-    .setImage(image)
-    .setColor('RANDOM')
-    message.delete();
-    message.channel.send(embed)
-    }
-    if (message.content.startsWith(prefix + "tgr")) {
-        let r = rn({
-            min: 0,
-            max: triggered.length - 1,
-            integer: true
-        });
-        let image = triggered[r];
-        let embed = new Discord.RichEmbed()
-        .setDescription('**' + message.author + '** đang triggered xD \n')
-        .setImage(image)
-        .setColor('RANDOM')
-        message.delete();
-        message.channel.send(embed)
-    }
     if (message.content.startsWith(prefix + "gaylen")) {
         let r = rn({
             min: 0,
@@ -287,40 +149,7 @@ Client.on('message', (message)=>{
         message.delete();
         message.channel.send(embed)
     }
-    if (message.content.startsWith(prefix + "choc")) {
-        if (!message.mentions.users.first()) return message.channel.send("Giáo sư tính chọc ai zị :v");
-    let r = rn({
-        min: 0,
-        max: poke.length - 1,
-        integer: true
-    });
-    let image = poke[r];
-    let embed = new Discord.RichEmbed()
-    .setDescription('**' + message.author + '** đã chọc **' + message.mentions.users.first() + '** :3 \n')
-    .setImage(image)
-    .setColor('RANDOM')
-    message.delete();
-    message.channel.send(embed)
-    }
-    if (message.content.startsWith(prefix + "bite")) {
-        if (!message.member.roles.find("name", "Đấng")) {
-            message.channel.send('Oof, giáo sư ko dùng đc lệnh này :3')
-            return
-        }
-        if (!message.mentions.users.first()) return message.channel.send("Cắn ai zị?");
-    let r = rn({
-        min: 0,
-        max: bite.length - 1,
-        integer: true
-    });
-    let image = bite[r];
-    let embed = new Discord.RichEmbed()
-    .setDescription('**' + message.author + '** cắn **' + message.mentions.users.first() + '** :scream: \n')
-    .setImage(image)
-    .setColor('RANDOM')
-    message.delete();
-    message.channel.send(embed)
-    }
+	
     if (message.content.startsWith(prefix + "deltin")) {
         let r = rn({
             min: 0,
@@ -364,20 +193,7 @@ Client.on('message', (message)=>{
         }
         purge();
     }
-    if(message.content.startsWith(prefix + "capoo")) {
-        let r = rn({
-            min: 0,
-            max: capoo.length - 1,
-            integer: true
-        });
-        let image = capoo[r];
-        let embed = new Discord.RichEmbed()
-        .setDescription('**Capoo**')
-        .setImage(image)
-        .setColor('RANDOM')
-	    message.delete();
-        message.channel.send(embed)
-    }
+    
     if (message.content.startsWith(prefix + 'ban')) {
         const user = message.mentions.users.first();
         if (user) {
@@ -399,7 +215,7 @@ Client.on('message', (message)=>{
         }
     }
     if (message.content.startsWith(prefix + 'help')){
-        message.channel.send('Kí tự: " ` " + om, pat, liem, tat, hon, tgr, gaylen, choc, deltin, cs, capoo, face, ava, info')
+        message.channel.send('Kí tự: " ` " + gaylen, deltin, cs, face, ava, info')
         message.channel.send(" Ví dụ: `om ( tag ai đó )")
     }
 });
