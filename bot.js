@@ -218,5 +218,16 @@ Client.on('message', (message)=>{
         message.channel.send('Kí tự: " ` " + gaylen, deltin, cs, face, ava, info')
         message.channel.send(" Ví dụ: `om ( tag ai đó )")
     }
+    let args = message.content.slice(says.length).trim().split(' ');
+    let command = args.shift().toLowerCase();
+	if(message.content.startsWith(says + "say")) {
+		if (!message.member.roles.find("Waifu <3", "Đô đốc")) {
+            message.channel.send('Oof, giáo sư ko dùng đc lệnh này :3')
+            return
+        }
+		let say = args.join(' ');
+		message.delete();
+		if (!message.mentions.users.first()) return message.channel.send(say)
+});
 });
 Client.login(process.env.BOT_TOKEN);
